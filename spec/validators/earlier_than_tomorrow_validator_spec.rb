@@ -5,10 +5,6 @@ require 'rails_helper'
 RSpec.describe EarlierThanTomorrowValidator, type: :model do
   context 'when a date is supplied' do
     with_model :ObjectWithDate do
-      table do |t|
-        t.date :date
-      end
-
       model do
         attr_accessor :date
         validates :date, earlier_than_tomorrow: true
