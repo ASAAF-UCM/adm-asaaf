@@ -17,6 +17,13 @@ AllCops:
 Style/Documentation:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Metrics/MethodLength:
   Enabled: true
   Max: 50
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
