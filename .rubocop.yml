@@ -27,3 +27,8 @@ Metrics/MethodLength:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+
+Naming/FileName:
+  Exclude:
+    - 'app/validators/DNI_validator.rb'
+    - 'spec/validators/DNI_validator_spec.rb'
