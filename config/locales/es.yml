@@ -53,6 +53,7 @@ es:
       sign_up: Registrarse
   devise:
     registrations:
+      login_title: Iniciar sesión
       new_title: New title
       registration_title: Registro
       submit: Enviar

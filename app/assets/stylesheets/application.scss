@@ -25,8 +25,16 @@ body {
   max-width: 600px;
 }
 
+.flex {
+  display: flex;
+}
+
 .center {
   text-align: center;
+}
+
+.center-flex {
+  justify-content: center;
 }
 
 .invisible {

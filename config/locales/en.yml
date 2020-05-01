@@ -52,6 +52,7 @@ en:
       sign_up: Sign up
   devise:
     registrations:
+      login_title: Log in
       new_title: New title
       registration_title: Sign up
       submit: Submit
