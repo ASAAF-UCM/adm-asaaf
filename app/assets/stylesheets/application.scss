@@ -22,12 +22,16 @@ body {
 }
 
 .main-container {
+  max-width: 600px;
 }
 
 .center {
   text-align: center;
 }
 
+.invisible {
+  display: none;
+}
 .logo {
   height: 60px;
   padding-right: 1rem;

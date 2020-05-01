@@ -1,0 +1,65 @@
+es:
+  devise:
+    confirmations:
+      confirmed: Tu dirección de email ha sido confirmada correctamente
+      send_instructions: Dentro de unos minutos recibirás un email con instrucciones acerca de cómo confirmar tu dirección de email.
+      send_paranoid_instructions: Si tu dirección de email existe en nuestra base de datos, en unos minutos recibirás un email con las instrucciones acerca de dómo confirmar tu dirección de email.
+    failure:
+      already_authenticated: Ya has iniciado sesión.
+      inactive: Tu cuenta aún no ha sido activada.
+      invalid: "%{authentication_keys} o contraseña inválida."
+      locked: Tu cuenta está bloqueada.
+      last_attempt: Te queda un intento antes de que tu cuenta sea bloqueada.
+      not_found_in_database: "%{authentication_keys} o contraseña inválida."
+      timeout: Tu sesión ha expirado. Por favor, vuelve a iniciar sesión.
+      unauthenticated: Has de iniciar sesión o registrarte antes de continuar.
+      unconfirmed: Tienes que confirmar tu dirección de correo electrónico antes de continuar.
+    mailer:
+      confirmation_instructions:
+        subject: Confirmation instructions
+      reset_password_instructions:
+        subject: Reset password instructions
+      unlock_instructions:
+        subject: Unlock instructions
+      email_changed:
+        subject: Email Changed
+      password_change:
+        subject: Password Changed
+    omniauth_callbacks:
+      failure: No se te pudo autentificar desde %{kind} debido a \%{reason}\.
+      success: Autentificado correctamente desde la cuenta de %{kind}.
+    passwords:
+      no_token: No puedes acceder a esta página si no has llegado desde un el email de cambio de contraseña. Si has llegado a esta página desde un email de cambio de contraseña, por favor, asegurate de que has usado la URL completa.
+      send_instructions: En unos minutos recibirás un email con las instrucciones acerca de cómo cambiar tu contraseña.
+      send_paranoid_instructions: Si tu dirección de email ya existe en nuestra base de datos, en unos minutos recibirás un email con las instrucciones acerca de cómo cambiar tu contraseña.
+      updated: Tu contraseña ha sido cambiada con éxito. Acabas de iniciar sesión.
+      updated_not_active: Tu contraseña ha sido cambiada con éxito.
+    registrations:
+      registration_title: Registro
+      destroyed: ¡Adiós! Tu cuenta ha sido borrada con éxito y ya no eres socio de ASAAF.
+      signed_up: ¡Bienvenido! Has creado tu cuenta en ASAAF correctamente. Acabas de iniciar sesión.
+      signed_up_but_inactive: ¡Bienvenido! Has creado tu cuenta en ASAAF correctamente. No obstante, no hemos podido iniciar sesión por ti debido a que tu cuenta aún no está activada.
+      signed_up_but_locked: ¡Bienvenido! Has creado tu cuenta en ASAAF correctamente. No obstante, no hemos podido iniciar sesión por ti debido a que tu cuenta está bloqueada.
+      signed_up_but_unconfirmed: Acabamos de mandarte un mensaje con un enlace para confirmar tu dirección de correo electrónico a tu dirección de email. Por favor, sigue el link para activar tu cuenta
+      submit: Enviar
+      update_needs_confirmation: Has actualizado tu cuenta con éxito, pero necesitamos verificar tu nueva dirección de correo electrónico. Por favor, revisa tu email y sigue el link de confirmación para que tu nueva dirección de email se confirme.
+      updated: Tu cuenta ha sido actualizada con éxito.
+      updated_but_not_signed_in: Tu cuenta ha sido actualizada con éxito, pero debido a que tu contraseña ha cambiado, tienes que volver a iniciar sesión.
+    sessions:
+      signed_in: Has iniciado sesión con éxito.
+      signed_out: Has cerrado sesión con éxito.
+      already_signed_out: Has cerrado sesión con éxito
+    unlocks:
+      send_instructions: En unos minutos recibirás un email con instrucciones acerca de cómo desbloquear tu cuenta.
+      send_paranoid_instructions: Si tu cuenta existe, en unos minutos recibirás un email con instrucciones acerca de cómo desboquear tu cuenta.
+      unlocked: Tu cuenta ha sido desbloqueada con éxito. Por favor, inicia sesión para continuar.
+  errors:
+    messages:
+      already_confirmed: ya está confirmada, por favor, prueba a iniciar sesión
+      confirmation_period_expired: tiene que confirmase dentro de las %{period} siguientes a que se envíe el email. Por favor, pide uno nuevo
+      expired: ha expirado. Por favor, pide uno nuevo
+      not_found: no encontrado
+      not_locked: no bloqueado
+      not_saved:
+        one: "Un error no permite que %{resource} sea guardado:"
+        other: "%{count} errors no permiten que %{resource} sea guardado:"

@@ -3,6 +3,10 @@ en:
   activerecord:
     errors:
       models:
+        id_document_type:
+          DNI: DNI
+          NIE: NIE
+          Passport: Passport
         member:
           attributes:
             birthdate:
@@ -49,7 +53,8 @@ en:
   devise:
     registrations:
       new_title: New title
-      submit_button: Submit button
+      registration_title: Sign up
+      submit: Submit
   errors:
     messages:
       not_saved: Not saved
@@ -58,13 +63,25 @@ en:
       member:
         birthdate: Date of birth
         id_document_expiration_date: Expiration date of ID document
-        id_document_numer: ID document number
+        id_document_number: ID document number
         id_document_type_id: ID document type
         moodle_name: Name in moodle (if you are a student of the faculty of physics)
         name: Name
         password: Password
         password_confirmation: Password confirmation
-        submit: Gilipollas
+        submit: ifdjaofj
+        surname1: First surname
+        surname2: Second surname
+    placeholder:
+      member:
+        birthdate: Date of birth
+        id_document_expiration_date: Expiration date of ID document
+        id_document_number: ID document number
+        id_document_type_id: ID document type
+        moodle_name: Name in moodle (if you are a student of the faculty of physics)
+        name: Name
+        password: Password
+        password_confirmation: Password confirmation
         surname1: First surname
         surname2: Second surname
   page:

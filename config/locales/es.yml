@@ -3,6 +3,10 @@ es:
   activerecord:
     errors:
       models:
+        id_document_type:
+          DNI: DNI
+          NIE: NIE
+          Passport: Pasaporte
         member:
           attributes:
             birthdate:
@@ -50,23 +54,38 @@ es:
   devise:
     registrations:
       new_title: New title
+      registration_title: Registro
+      submit: Enviar
       submit_button: Submit button
   errors:
     messages:
-      not_saved: Not saved
+      not_saved: No se han guardado los datos
   helpers:
     label:
       member:
         birthdate: Fecha de nacimiento
         id_document_expiration_date: Fecha de caducidad del documento de identidad
-        id_document_numer: Número del documento de identidad
+        id_document_number: Número del documento de identidad
         id_document_type_id: Tipo de documento de identidad
         moodle_name: Nombre en moodle (si estudias en la facultad de Físicas de la
           UCM)
         name: Nombre
         password: Contraseña
         password_confirmation: Confirmar contraseña
-        submit: Gilipollas
+        submit: Enviar
+        surname1: Primer apellido
+        surname2: Segundo apellido
+    placeholder:
+      member:
+        birthdate: Fecha de nacimiento
+        id_document_expiration_date: Fecha de caducidad del documento de identidad
+        id_document_number: Número del documento de identidad
+        id_document_type_id: Tipo de documento de identidad
+        moodle_name: Nombre en moodle (si estudias en la facultad de Físicas de la
+          UCM)
+        name: Nombre
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
         surname1: Primer apellido
         surname2: Segundo apellido
   page:
