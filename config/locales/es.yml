@@ -1,5 +1,77 @@
+---
 es:
+  activerecord:
+    errors:
+      models:
+        member:
+          attributes:
+            birthdate:
+              blank: La fecha de nacimiento no puede estar vacía.
+            email:
+              blank: El email no puede estar en blanco.
+            id_document_expiration_date:
+              blank: La fecha de caducidad del documento de identidad no puede estar
+                vacía.
+            id_document_number:
+              blank: El número de documento de identidad no puede estar vacío.
+            id_document_type_id:
+              blank: El tipo de documento de identidad no puede estar vacío.
+            image_data:
+              blank: Es necesario añadir una foto del documento de identidad.
+            name:
+              blank: El nombre no puede estar en blanco.
+              too_long: El nombre es demasiado largo (máximo %{count} caracteres).
+              too_short: El nombre es demasiado corto (mínimo %{count} caracteres).
+            password:
+              blank: La contraseña no puede estar en blanco.
+            surname1:
+              blank: El primer apellido no puede estar en blanco.
+              too_long: El primer apellido es demasiado largo (máximo %{count} caracteres).
+              too_short: El primer apellido es demasiado corto (mínimo %{count} caracteres).
+            surname2:
+              too_long: El segundo apellido es demasiado largo (máximo %{count} caracteres).
+      validators:
+        dni:
+          control_character: Control character
+          format: Format
+        earlier_than: Earlier than
+        earlier_than_today: Earlier than today
+        earlier_than_tomorrow: Earlier than tomorrow
+        later_than_today: Later than today
+        later_than_yesterday: Later than yesterday
+  app:
+    footer:
+      by: por
+      made_with: Hecho con
+    nav:
+      sign_in: Iniciar sesión
+      sign_out: Cerrar sesión
+      sign_up: Registrarse
+  devise:
+    registrations:
+      new_title: New title
+      submit_button: Submit button
+  errors:
+    messages:
+      not_saved: Not saved
+  helpers:
+    label:
+      member:
+        birthdate: Fecha de nacimiento
+        id_document_expiration_date: Fecha de caducidad del documento de identidad
+        id_document_numer: Número del documento de identidad
+        id_document_type_id: Tipo de documento de identidad
+        moodle_name: Nombre en moodle (si estudias en la facultad de Físicas de la
+          UCM)
+        name: Nombre
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+        submit: Gilipollas
+        surname1: Primer apellido
+        surname2: Segundo apellido
   page:
     home:
-      subtitle: "Astronomía desde 1994"
-      description: "Somos una asociación de estudiantes de la facultad de Ciencias Físicas de la UCM que se dedica a la divulgación de la astronomía y de la astrofísica."
+      description: Somos una asociación de estudiantes de la facultad de Ciencias
+        Físicas de la UCM que se dedica a la divulgación de la astronomía y de la
+        astrofísica.
+      subtitle: Astronomía desde 1994

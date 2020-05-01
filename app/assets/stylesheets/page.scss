@@ -1,0 +1,33 @@
+body.homepage {
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  background: {
+     image: asset_url("bg.jpg");
+     size: cover;
+     position: fixed;
+  }
+}
+
+.main-navbar.homepage {
+  background-color: transparent;
+}
+
+.container {
+  margin-top: 3rem;
+}
+
+.asaaf {
+  font-size: 8rem;
+  margin-bottom: -1rem;
+}
+
+.asaaf-sub {
+  font-size: 3rem;
+}
+
+.asaaf-desc {
+  margin: auto;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  width: 66%;
+}

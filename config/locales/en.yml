@@ -1,5 +1,75 @@
+---
 en:
+  activerecord:
+    errors:
+      models:
+        member:
+          attributes:
+            birthdate:
+              blank: Birthdate can't be blank.
+            email:
+              blank: Email can't be blank.
+            id_document_expiration_date:
+              blank: Expiration date of the id document can't be blank.
+            id_document_number:
+              blank: Id number can't be blank.
+            id_document_type_id:
+              blank: The ID type can't be blank.
+            image_data:
+              blank: You must add a photo of your id document.
+            name:
+              blank: Name can't be blank.
+              too_long: Name is too long (%{count} characters maximum).
+              too_short: Name is too short (%{count} characters minimum).
+            password:
+              blank: Password can't be blank.
+            surname1:
+              blank: First surname can't be blank.
+              too_long: First surname is too long (%{count} characters maximum).
+              too_short: First surname is too short (%{count} characters minumum).
+            surname2:
+              too_long: Second surname is too long(%{count} characters maximum).
+      validators:
+        dni:
+          control_character: DNI control character is not correct.
+          format: Format of the DNI is not correct.
+        earlier_than: Earlier than
+        earlier_than_today: Earlier than today
+        earlier_than_tomorrow: Earlier than tomorrow
+        later_than_today: Later than today
+        later_than_yesterday: Later than yesterday
+  app:
+    footer:
+      by: by
+      made_with: Made with
+    nav:
+      sign_in: Sign in
+      sign_out: Sign out
+      sign_up: Sign up
+  devise:
+    registrations:
+      new_title: New title
+      submit_button: Submit button
+  errors:
+    messages:
+      not_saved: Not saved
+  helpers:
+    label:
+      member:
+        birthdate: Date of birth
+        id_document_expiration_date: Expiration date of ID document
+        id_document_numer: ID document number
+        id_document_type_id: ID document type
+        moodle_name: Name in moodle (if you are a student of the faculty of physics)
+        name: Name
+        password: Password
+        password_confirmation: Password confirmation
+        submit: Gilipollas
+        surname1: First surname
+        surname2: Second surname
   page:
     home:
-      subtitle: "Astronomy since 1994"
-      description: "We are an student's association from the Physical Science Faculty of the Universidad Complutense de Madrid which devote to the outreach of astronomy and astrophysics."
+      description: We are an student's association from the Physical Science Faculty
+        of the Universidad Complutense de Madrid which devote to the outreach of astronomy
+        and astrophysics.
+      subtitle: Astronomy since 1994

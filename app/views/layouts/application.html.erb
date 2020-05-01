@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Admasaaf</title>
+    <title>Administración de ASAAF</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= @home_page ? 'homepage' : ''%>">
+    <%= render 'layouts/nav' %>
+    <%= render 'layouts/flash' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

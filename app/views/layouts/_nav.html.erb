@@ -1,0 +1,21 @@
+<nav class="navbar main-navbar <%= @home_page ? 'homepage' : ''%>">
+  <ul class="nav-left btn-group">
+    <li>
+      <%= link_to image_tag("logo_asaaf", alt: "Logo de ASAAF", class: "logo"), root_path %>
+    </li>
+  </ul>
+  <ul class="nav-right btn-group">
+    <% if member_signed_in? %>
+      <li>
+  <%= link_to t('app.nav.sign_out'), destroy_member_session_path, method: 'delete', class: 'btn nav-link header-nav'%>
+      </li>
+    <% else %>
+      <li>
+  <%= link_to t('app.nav.sign_in'), new_member_session_path, class: 'btn nav-link header-nav'%>
+      </li>
+      <li>
+  <%= link_to t('app.nav.sign_up'), new_member_registration_path, class: 'btn btn-outline-light header-nav', id: 'sign_up-button' %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
