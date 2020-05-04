@@ -15,4 +15,5 @@ class Member < ApplicationRecord
   validates :member_since,
             :last_active_member_confirmation,
             earlier_than_tomorrow: true
+  include ImageUploader::Attachment(:image)
 end

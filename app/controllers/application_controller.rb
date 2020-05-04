@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
                                         id_document_expiration_date
                                         id_document_number
                                         moodle_name
+                                        image
                                       ])
   end
 

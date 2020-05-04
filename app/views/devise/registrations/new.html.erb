@@ -1,42 +1,42 @@
 <div class="container main-container">
 <h2><%= t 'devise.registrations.registration_title' %></h2>
 
-  <%= form_with(model: resource, scope: resource_name, local:true, url: registration_path(resource_name), method: :post) do |f| %>
+<%= form_with(model: resource, scope: resource_name, local:true, url: registration_path(resource_name), method: :post) do |f| %>
   <%= render 'devise/shared/error_messages', resource: resource %>
 
   <div class="form-row">
   <div class="form-group col-md-4">
-    <%= f.label :name, class: 'invisible' %>
-    <%= f.text_field :name, class: 'form-control', placeholder: true, placeholder: true %>
+  <%= f.label :name, class: 'invisible' %>
+  <%= f.text_field :name, class: 'form-control', placeholder: true, placeholder: true %>
   </div>
 
   <div class="form-group col-md-4">
-    <%= f.label :surname1, class: 'invisible' %>
-    <%= f.text_field :surname1, class: 'form-control', placeholder: true, placeholder: true %>
+  <%= f.label :surname1, class: 'invisible' %>
+  <%= f.text_field :surname1, class: 'form-control', placeholder: true, placeholder: true %>
   </div>
 
   <div class="form-group col-md-4">
-    <%= f.label :surname2, class: 'invisible' %>
-    <%= f.text_field :surname2, class: 'form-control', placeholder: true %>
+  <%= f.label :surname2, class: 'invisible' %>
+  <%= f.text_field :surname2, class: 'form-control', placeholder: true %>
   </div>
-</div>
+  </div>
 
   <div class="form-group">
-    <%= f.label :email, class: 'invisible'%>
-    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: true %>
+  <%= f.label :email, class: 'invisible'%>
+  <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: true %>
   </div>
 
   <div class="form-row">
   <div class="form-group col-md-6">
-    <%= f.label :password, class: 'invisible' %>
-    <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control', placeholder: true %>
+  <%= f.label :password, class: 'invisible' %>
+  <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control', placeholder: true %>
   </div>
 
   <div class="form-group col-md-6" f.label :password_confirmation %>
-    <%= f.label :password_confirmation, class: 'invisible' %>
-    <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control', placeholder: true %>
+  <%= f.label :password_confirmation, class: 'invisible' %>
+  <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control', placeholder: true %>
   </div>
-</div>
+  </div>
 
   <div class="form-group">
     <%= f.label :birthdate, class: 'invisible' %>
@@ -48,17 +48,17 @@
     </div>
   </div>
 
-<div class="form-row">
-  <div class="form-group col-md-3">
-    <%= f.label :id_document_type_id, class: 'invisible' %>
-    <%= f.collection_select(:id_document_type_id, IdDocumentType.all, :id, ->(element) { translate_id_name(element) }) %>
-  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <%= f.label :id_document_type_id, class: 'invisible' %>
+      <%= f.collection_select(:id_document_type_id, IdDocumentType.all, :id, ->(element) { translate_id_name(element) }) %>
+    </div>
 
-  <div class="form-group col-md-9">
-    <%= f.label :id_document_number, class: 'invisible' %>
-    <%= f.text_field :id_document_number, class: 'form-control', placeholder: true %>
+    <div class="form-group col-md-9">
+      <%= f.label :id_document_number, class: 'invisible' %>
+      <%= f.text_field :id_document_number, class: 'form-control', placeholder: true %>
+    </div>
   </div>
-</div>
 
   <div class="form-group">
     <%= f.label :id_document_expiration_date, class: 'invisible' %>
@@ -73,6 +73,12 @@
   <div class="form-group">
     <%= f.label :moodle_name, class: 'invisible' %>
     <%= f.text_field :moodle_name, class: 'form-control', placeholder: true %>
+  </div>
+
+  <div class="form-group custom-file">
+    <%= f.hidden_field :image, value: @member.cached_image_data %>
+    <%= f.file_field :image, class: 'custom-file-input' %>
+    <label class="custom-file-label" for="image">choose File</label>
   </div>
 
   <div class="actions">
