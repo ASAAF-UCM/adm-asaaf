@@ -47,6 +47,10 @@ es:
     footer:
       by: por
       made_with: Hecho con
+      links:
+        about_us: Acerca de nosotros
+        contact: Contacto
+        social: Redes sociales
     nav:
       sign_in: Iniciar sesión
       sign_out: Cerrar sesión
