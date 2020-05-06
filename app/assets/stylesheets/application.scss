@@ -23,6 +23,7 @@ body {
 
 .main-container {
   max-width: 600px;
+  display:flex;
 }
 
 .flex {
@@ -34,6 +35,7 @@ body {
 }
 
 .center-flex {
+  display: flex;
   justify-content: center;
 }
 

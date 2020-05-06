@@ -52,12 +52,24 @@ es:
       sign_out: Cerrar sesión
       sign_up: Registrarse
   devise:
+    confirmations:
+      new_title: Reenvío de confirmación
+      submit_button: Reenviar
+    passwords:
+      edit_title: Cambiar contraseña
+      new_title: ¿Has olvidado tu contraseña?
+      send_password_instructions: Enviar instrucciones para cambiar contraseña
+      submit_button: Cambiar contraseña
     registrations:
-      login_title: Iniciar sesión
-      new_title: New title
-      registration_title: Registro
+      new_title: Registro
       submit: Enviar
       submit_button: Submit button
+    sessions:
+      new_title: Iniciar sesión
+      sign_in: Iniciar sesión
+    unlocks:
+      new_title: Reenvío de instrucciones de desbloqueo
+      resend_button: Reenviar instrucciones de desbloqueo
   errors:
     messages:
       not_saved: No se han guardado los datos

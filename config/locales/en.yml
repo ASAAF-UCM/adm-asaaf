@@ -51,11 +51,23 @@ en:
       sign_out: Sign out
       sign_up: Sign up
   devise:
+    confirmations:
+      new_title: Resend confirmation instructions
+      submit_button: Resend confirmation instructions
+    passwords:
+      edit_title: Change your password
+      new_title: Forgot your password?
+      send_password_instructions: Send me reset password instructions
+      submit_button: Change my password
     registrations:
-      login_title: Log in
-      new_title: New title
-      registration_title: Sign up
+      new_title: Sign up
       submit: Submit
+    sessions:
+      new_title: Sign in
+      sign_in: Sign in
+    unlocks:
+      new_title: Resend unlock instructions
+      resend_button: Resend unlock instructions
   errors:
     messages:
       not_saved: Not saved
