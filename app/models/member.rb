@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class Member < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :role_allocations
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable,
@@ -17,5 +16,6 @@ class Member < ApplicationRecord
   validates :member_since,
             :last_active_member_confirmation,
             earlier_than_tomorrow: true
+
   include ImageUploader::Attachment(:image)
 end

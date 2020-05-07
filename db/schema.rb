@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_014528) do
+ActiveRecord::Schema.define(version: 2020_05_06_110749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -65,6 +65,22 @@ ActiveRecord::Schema.define(version: 2020_04_28_014528) do
     t.index ["unlock_token"], name: "index_members_on_unlock_token", unique: true
   end
 
+  create_table "role_allocations", force: :cascade do |t|
+    t.bigint "role_type_id", null: false
+    t.uuid "member_id", null: false
+    t.boolean "is_active"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["member_id"], name: "index_role_allocations_on_member_id"
+    t.index ["role_type_id"], name: "index_role_allocations_on_role_type_id"
+  end
+
+  create_table "role_types", force: :cascade do |t|
+    t.string "role_name"
+  end
+
   add_foreign_key "members", "id_document_types"
   add_foreign_key "members", "member_types"
+  add_foreign_key "role_allocations", "members"
+  add_foreign_key "role_allocations", "role_types"
 end
