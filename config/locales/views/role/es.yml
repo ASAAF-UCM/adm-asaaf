@@ -1,0 +1,16 @@
+---
+es:
+  views:
+    role:
+      index:
+        title: Roles
+        assign_role: Asignar rol
+        role: Rol
+        member: Socio
+        id: Id
+        active: ¿Activo?
+        actions: Acciones
+        destroy: ¿Estás seguro de que deseas borrar esta asignación de rol?
+      new:
+        title: Asignar rol a usuario
+        submit: Asignar rol

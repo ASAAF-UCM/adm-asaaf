@@ -45,12 +45,13 @@ en:
   app:
     footer:
       by: by
-      made_with: Made with
       links:
         about_us: About us
         contact: Contact
         social: Social networks
+      made_with: Made with
     nav:
+      roles: Roles
       sign_in: Sign in
       sign_out: Sign out
       sign_up: Sign up
@@ -65,7 +66,9 @@ en:
       submit_button: Change my password
     registrations:
       new_title: Sign up
+      registration_title: Sign up
       submit: Submit
+      submit_button: Submit
     sessions:
       new_title: Sign in
       sign_in: Sign in
@@ -101,6 +104,10 @@ en:
         password_confirmation: Password confirmation
         surname1: First surname
         surname2: Second surname
+  models:
+    role:
+      names:
+        ":": ":"
   page:
     home:
       description: We are an student's association from the Physical Science Faculty

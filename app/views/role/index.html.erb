@@ -1,0 +1,38 @@
+<div>
+<h2><%= t_scoped :title %></h2>
+<%= link_to t_scoped(:assign_role), new_role_path, class: 'btn btn-primary' %>
+
+<table class="table">
+  <thead>
+    <th scope="col"><%= t_scoped(:id)%></th>
+    <th scope="col"><%= t_scoped(:member)%></th>
+    <th scope="col"><%= t_scoped(:role)%></th>
+    <th scope="col"><%= t_scoped(:active) %></th>
+    <th scope="col"><%= t_scoped(:actions) %></th>
+  </thead>
+  <tbody>
+    <% @role_allocations.each do |role| %>
+      <tr>
+        <th scope="row"><%= role.id %></th>
+        <td><%= role.member.name %></td>
+        <td><%= t 'models.role.names.' + role.role_type.role_name %></td>
+        <td class="center">
+          <%= link_to role_path(role), method: :patch do %>
+            <% if role.is_active %>
+              <box-icon name='checkbox-checked'></box-icon>
+            <% else %>
+              <box-icon name='checkbox'></box-icon>
+            <% end %>
+          <% end %>
+        </td>
+        <td class="center">
+        <%= link_to role_path(role), method: :delete, data: { confirm: t_scoped('destroy') } do %>
+          <box-icon name='x-circle' color='red'></box-icon>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+

@@ -3,11 +3,18 @@
     <li>
       <%= link_to image_tag("logo_asaaf", alt: "Logo de ASAAF", class: "logo"), root_path %>
     </li>
+    <li>
+      <% if member_signed_in? %>
+        <% if member_allowed? 'admin' %>
+          <%= link_to t('app.nav.roles'), role_index_path, class: 'btn nav-link header-nav' %>
+        <% end %>
+      <% end %>
+    </li>
   </ul>
   <ul class="nav-right btn-group">
     <% if member_signed_in? %>
       <li>
-  <%= link_to t('app.nav.sign_out'), destroy_member_session_path, method: 'delete', class: 'btn nav-link header-nav'%>
+        <%= link_to t('app.nav.sign_out'), destroy_member_session_path, method: 'delete', class: 'btn nav-link header-nav'%>
       </li>
     <% else %>
       <li>

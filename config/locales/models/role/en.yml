@@ -1,0 +1,10 @@
+---
+en:
+  models:
+    role:
+      id: Id
+      names:
+        admin: Administrator
+        accounting: Accounting
+        secretary: Secretary
+        loans: Loans

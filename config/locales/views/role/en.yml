@@ -1,0 +1,16 @@
+---
+en:
+  views:
+    role:
+      index:
+        title: Roles
+        assign_role: Assign Role
+        role: Role
+        member: Member
+        id: Id
+        active: Active?
+        actions: Actions
+        destroy: Are you sure you want to remove this role allocation?
+      new:
+        title: Assign role to user
+        submit: Assign role

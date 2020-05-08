@@ -111,6 +111,7 @@ GEM
       rails-i18n
       rainbow (>= 2.2.2, < 4.0)
       terminal-table (>= 1.5.1)
+    i18n_lazy_scope (1.0.0)
     image_processing (1.10.3)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
@@ -285,6 +286,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   i18n-tasks
+  i18n_lazy_scope
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)

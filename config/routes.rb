@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
     get '/:locale' => 'page#home'
     devise_for :members
+    resources :member_administration
+
+    resources :role, only: %i[index new create destroy update]
   end
 
   root to: 'page#detect_locale'

@@ -1,0 +1,10 @@
+---
+es:
+  models:
+    role:
+      id: Id
+      names:
+        admin: Administrador
+        accounting: Tesorería
+        secretary: Secretaría
+        loans: Préstamos
