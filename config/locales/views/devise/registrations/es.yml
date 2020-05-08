@@ -1,0 +1,7 @@
+---
+es:
+  views:
+    devise:
+      registrations:
+        edit:
+          title: Cambiar contraseña
