@@ -13,9 +13,14 @@
   </ul>
   <ul class="nav-right btn-group">
     <% if member_signed_in? %>
-      <li>
-        <%= link_to t('app.nav.sign_out'), destroy_member_session_path, method: 'delete', class: 'btn nav-link header-nav'%>
-      </li>
+      <div class="dropdown">
+        <button class="btn nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_member.email %>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <%= link_to t('app.nav.sign_out'), destroy_member_session_path, method: 'delete', class: 'dropdown-item' %>
+        </div>
+      </div>
     <% else %>
       <li>
   <%= link_to t('app.nav.sign_in'), new_member_session_path, class: 'btn nav-link header-nav'%>
