@@ -6,6 +6,7 @@ es:
         full_name: Nombre y apellidos
         birthdate: Fecha de nacimiento
         id_number: Documento de identidad
+        expiry: Caducidad
         member_number: Número de socio
         no_member_number: Aún no es socio
         moodle_name: Nombre en moodle

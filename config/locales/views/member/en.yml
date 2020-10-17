@@ -6,6 +6,7 @@ en:
         full_name: Full name
         birthdate: Birthdate
         id_number: Id number
+        expiry: Expiry
         member_number: Member number
         no_member_number: Not yet a member
         moodle_name: Name in moodle
