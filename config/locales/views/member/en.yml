@@ -1,0 +1,15 @@
+en:
+  views:
+    member:
+      showprofile:
+        title: My profile
+        full_name: Full name
+        birthdate: Birthdate
+        id_number: Id number
+        member_number: Member number
+        no_member_number: Not yet a member
+        moodle_name: Name in moodle
+        no_moodle_name: No moodle name
+        update_id_number: Update id
+        change_password: Change password
+        
