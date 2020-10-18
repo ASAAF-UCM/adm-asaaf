@@ -15,10 +15,7 @@ module MemberHelper
     member.moodle_name
   end
 
-  def id_number_and_expiry_date(member)
-    member.id_document_number + ' ('\
-    + t_scoped(:expiry) + ': '\
-    + member.id_document_expiration_date.to_s\
-    + ')'
+  def id_expired?(member)
+    Time.zone.today > member.id_document_expiration_date
   end
 end
