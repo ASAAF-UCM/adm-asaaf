@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# This class is a model arond a devise user. Instead of calling the user of the
+# web user, we have selected instead the name member, in order to reflect that
+# all the people who will use this app are members of ASAAF.
 class Member < ApplicationRecord
   has_many :role_allocations, dependent: :destroy
 

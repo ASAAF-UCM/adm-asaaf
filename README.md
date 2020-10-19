@@ -28,15 +28,20 @@ Debido a que la aplicación se sirve desde un contenedor de Docker, es completam
 
 A continuación se muestran los distintos pasos necesarios para instalar la aplicación.
 
+### Documentación
+
+Para generar la documentación, hay que lanzar el siguiente comando en la base
+del repo:
+
+```
+  yard
+```
+
+Tras esto, abrimos con un navegador web `doc/index.html`.
+
 ### Tests
 
-Para ejecutar los distintos tests, usa el comando:
-
-```
-  RUBYOPT='-W:no-deprecated' rspec
-```
-
-Las opciones del principio son para evitar que salgan miles de warning debido a que pronto va a haber un salto de versión en ruby, de la 2.7 a la 3, en el que se van a retirar algunas cosas que se han usado muy profusamente en el código de rails.
+Para realizar los tests se utiliza rspec.
 
 ### Despliegue
 
