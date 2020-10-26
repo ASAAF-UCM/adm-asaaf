@@ -22,8 +22,8 @@ body {
 }
 
 .main-container {
-  max-width: 600px;
-  display:flex;
+  max-width: 600px / flahs;
+  display: flex;
 }
 
 .flex {
@@ -115,9 +115,15 @@ body {
   text-transform: uppercase;
 }
 
-.nav-left, .nav-right {
+.nav-left,
+.nav-right {
   vertical-align: middle;
   display: flex;
+}
+
+#flash {
+  max-width: 35rem;
+  margin: 2rem auto 0 auto;
 }
 
 footer {
@@ -176,7 +182,7 @@ footer {
 }
 
 #heart {
-  margin: 0 .3rem;
+  margin: 0 0.3rem;
 }
 
 .sign a {
