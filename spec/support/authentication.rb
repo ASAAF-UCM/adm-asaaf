@@ -12,11 +12,8 @@ module Helpers
       member = FactoryBot.create(:random_member)
       sign_in member
       member.confirm
-      role_alloc = RoleAllocation.new
-      role_alloc.role_type_id = 1
-      role_alloc.member_id = member.id
-      role_alloc.is_active = true
-      role_alloc.save
+      ra = RoleAllocation.new
+      ra.promote_to_admin! member
     end
   end
 end
