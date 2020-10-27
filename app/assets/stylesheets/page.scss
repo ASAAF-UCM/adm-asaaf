@@ -2,9 +2,9 @@ body.homepage {
   font-family: 'Ubuntu', sans-serif;
   color: white;
   background: {
-     image: asset_url("bg.jpg");
-     size: cover;
-     position: fixed;
+    image: asset-url('bg.jpg');
+    size: cover;
+    position: fixed;
   }
 }
 

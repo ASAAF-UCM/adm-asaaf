@@ -1,7 +1,7 @@
 en:
   views:
     profile:
-      showprofile:
+      index:
         title: My profile
         full_name: Full name
         birthdate: Birthdate
@@ -13,4 +13,6 @@ en:
         no_moodle_name: No moodle name
         update_id_number: Update id
         change_password: Change password
+      edit_password: 
+        title: Change password
         

@@ -15,19 +15,6 @@ en:
         earlier_than_tomorrow: Earlier than tomorrow
         later_than_today: Later than today
         later_than_yesterday: Later than yesterday
-  app:
-    footer:
-      by: by
-      links:
-        about_us: About us
-        contact: Contact
-        social: Social networks
-      made_with: Made with
-    nav:
-      roles: Roles
-      sign_in: Sign in
-      sign_out: Sign out
-      sign_up: Sign up
   devise:
     confirmations:
       new_title: Resend confirmation instructions

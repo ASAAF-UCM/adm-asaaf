@@ -22,6 +22,9 @@ en:
               too_short: Name is too short (%{count} characters minimum).
             password:
               blank: Password can't be blank.
+              too_short: Password is too short (%{count} characters minimum).
+            password_confirmation:
+              confirmation: Password do not match.
             surname1:
               blank: First surname can't be blank.
               too_long: First surname is too long (%{count} characters maximum).

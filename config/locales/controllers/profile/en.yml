@@ -1,0 +1,5 @@
+en:
+  controllers:
+    profile:
+      update_password:
+        success: Your password was changed successfully.

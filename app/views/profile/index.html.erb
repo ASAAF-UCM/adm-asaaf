@@ -36,9 +36,8 @@
     <%= '(' + t_scoped(:expiry)  + ': ' + @member.id_document_expiration_date.to_s  + ')' %>
   </span>
   <div>
-    <%= image_tag @member.image_url || "" %>
+    <%# image_tag @member.image_url || "" %>
   </div>
-  <button class="btn btn-primary"><%= t_scoped :update_id_number %></button>
 </div>
 <div class="profile_field">
   <p class="field_name">
@@ -57,6 +56,6 @@
   </p>
 </div>
 
-<%= link_to t_scoped(:change_password) , member_update_password_path, class: 'btn btn-primary' %>
+<%= link_to t_scoped(:change_password) , profile_password_path, class: 'btn btn-primary' %>
 </div>
 

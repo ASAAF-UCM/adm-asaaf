@@ -5,8 +5,8 @@
     </div>
     <ul class="links-contact col-md-3">
       <li class="links-header">ASAAF</li>
-      <li class="links-link"><%= link_to t('app.footer.links.about_us'), 'https://asaaf.org/sobre-nosotros/'%></li>
-      <li class="links-link"><%= link_to t('app.footer.links.contact'), 'https://asaaf.org/sobre-nosotros/contacto/'%></li>
+      <li class="links-link"><%= link_to t_scoped(:about_us), 'https://asaaf.org/sobre-nosotros/'%></li>
+      <li class="links-link"><%= link_to t_scoped(:contact), 'https://asaaf.org/sobre-nosotros/contacto/'%></li>
     </ul>
     <ul class="links-help col-md-3">
       <li class="links-header">Ayuda</li>
@@ -23,8 +23,8 @@
   </div>
   <div class="container-flex footer-sign">
     <div class="sign"> 
-      <span><%= t 'app.footer.made_with'%></span>
+      <span><%= t_scoped :made_with%></span>
       <box-icon id="heart" type="solid" name="heart" color="red" animation="tada-hover"></box-icon>
-      <span><%= t 'app.footer.by' %> <a href="https://iaderdor.info">iaderdor</a></span>
+      <span><%= t_scoped :by %> <a href="https://iaderdor.info">iaderdor</a></span>
     </div></div>
 </footer>

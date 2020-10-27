@@ -23,6 +23,9 @@ es:
               too_short: El nombre es demasiado corto (mínimo %{count} caracteres).
             password:
               blank: La contraseña no puede estar en blanco.
+              too_short: La contraseña es demasiado corta (mínimo %{count} caracteres).
+            password_confirmation:
+              confirmation: Las contraseñas no coinciden.
             surname1:
               blank: El primer apellido no puede estar en blanco.
               too_long: El primer apellido es demasiado largo (máximo %{count} caracteres).

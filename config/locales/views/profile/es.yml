@@ -1,7 +1,7 @@
 es:
   views:
     profile:
-      showprofile:
+      index:
         title: Mi perfil
         full_name: Nombre y apellidos
         birthdate: Fecha de nacimiento
@@ -13,3 +13,5 @@ es:
         no_moodle_name: No hay nombre de moodle
         update_id_number: Actualizar el documento de identidad
         change_password: Cambiar contraseña
+      edit_password:
+        title: Cambiar contraseña

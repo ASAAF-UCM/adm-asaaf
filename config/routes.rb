@@ -9,6 +9,12 @@ Rails.application.routes.draw do
       post 'members' => 'devise/registrations#create', :as => 'member_registration'
     end
 
+    scope :profile do
+      get '', to: 'profile#index', as: :profile
+      get 'password/edit', to: 'profile#edit_password', as: :profile_password
+      put 'password/edit', to: 'profile#update_password'
+    end
+
     resources :member_administration
 
     resources :role, only: %i[index new create destroy update]
