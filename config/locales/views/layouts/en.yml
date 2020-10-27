@@ -1,0 +1,15 @@
+en:
+  views:
+    layouts:
+      footer:
+        about_us: About us
+        contact: Contact
+        social: Social
+        made_with: Made with
+        by: by
+      nav:
+        profile: Profile
+        roles: Roles
+        sign_in: Sign in
+        sign_out: Sign out
+        sign_up: Sign up

@@ -1,4 +1,3 @@
----
 en:
   activerecord:
     errors:
@@ -7,32 +6,6 @@ en:
           DNI: DNI
           NIE: NIE
           Passport: Passport
-        member:
-          attributes:
-            birthdate:
-              blank: Birthdate can't be blank.
-            email:
-              blank: Email can't be blank.
-            id_document_expiration_date:
-              blank: Expiration date of the id document can't be blank.
-            id_document_number:
-              blank: Id number can't be blank.
-            id_document_type_id:
-              blank: The ID type can't be blank.
-            image_data:
-              blank: You must add a photo of your id document.
-            name:
-              blank: Name can't be blank.
-              too_long: Name is too long (%{count} characters maximum).
-              too_short: Name is too short (%{count} characters minimum).
-            password:
-              blank: Password can't be blank.
-            surname1:
-              blank: First surname can't be blank.
-              too_long: First surname is too long (%{count} characters maximum).
-              too_short: First surname is too short (%{count} characters minumum).
-            surname2:
-              too_long: Second surname is too long(%{count} characters maximum).
       validators:
         dni:
           control_character: DNI control character is not correct.
@@ -78,33 +51,6 @@ en:
   errors:
     messages:
       not_saved: Not saved
-  helpers:
-    label:
-      member:
-        birthdate: Date of birth
-        id_document_expiration_date: Expiration date of ID document
-        id_document_number: ID document number
-        id_document_type_id: ID document type
-        moodle_name: Name in moodle (if you are a student of the faculty of physics)
-        name: Name
-        password: Password
-        password_confirmation: Password confirmation
-        submit: ifdjaofj
-        surname1: First surname
-        surname2: Second surname
-    placeholder:
-      member:
-        birthdate: Date of birth
-        id_document_expiration_date: Expiration date of ID document
-        id_document_number: ID document number
-        id_document_type_id: ID document type
-        moodle_name: Name in moodle (if you are a student of the faculty of physics)
-        name: Name
-        password: Password
-        password_confirmation: Password confirmation
-        current_password: Current password
-        surname1: First surname
-        surname2: Second surname
   models:
     role:
       names:

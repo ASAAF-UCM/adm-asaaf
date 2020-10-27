@@ -1,0 +1,32 @@
+es:
+  activerecord:
+    errors:
+      models:
+        member:
+          attributes:
+            birthdate:
+              blank: La fecha de nacimiento no puede estar vacía.
+            email:
+              blank: El email no puede estar en blanco.
+            id_document_expiration_date:
+              blank: La fecha de caducidad del documento de identidad no puede estar
+                vacía.
+            id_document_number:
+              blank: El número de documento de identidad no puede estar vacío.
+            id_document_type_id:
+              blank: El tipo de documento de identidad no puede estar vacío.
+            image_data:
+              blank: Es necesario añadir una foto del documento de identidad.
+            name:
+              blank: El nombre no puede estar en blanco.
+              too_long: El nombre es demasiado largo (máximo %{count} caracteres).
+              too_short: El nombre es demasiado corto (mínimo %{count} caracteres).
+            password:
+              blank: La contraseña no puede estar en blanco.
+            surname1:
+              blank: El primer apellido no puede estar en blanco.
+              too_long: El primer apellido es demasiado largo (máximo %{count} caracteres).
+              too_short: El primer apellido es demasiado corto (mínimo %{count} caracteres).
+            surname2:
+              too_long: El segundo apellido es demasiado largo (máximo %{count} caracteres).
+

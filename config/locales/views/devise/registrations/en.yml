@@ -1,0 +1,43 @@
+en:
+  helpers:
+    label:
+      member:
+        birthdate: Date of birth
+        id_document_expiration_date: Expiration date of ID document
+        id_document_number: ID document number
+        id_document_type_id: ID document type
+        moodle_name: Name in moodle (if you are a student of the faculty of physics)
+        name: Name
+        password: Password
+        password_confirmation: Password confirmation
+        submit: ifdjaofj
+        surname1: First surname
+        surname2: Second surname
+    placeholder:
+      member:
+        birthdate: Date of birth
+        id_document_expiration_date: Expiration date of ID document
+        id_document_number: ID document number
+        id_document_type_id: ID document type
+        moodle_name: Name in moodle (if you are a student of the faculty of physics)
+        name: Name
+        password: Password
+        password_confirmation: Password confirmation
+        current_password: Current password
+        surname1: First surname
+        surname2: Second surname
+  views:
+    devise:
+      registrations:
+        new:
+          title: Sign up
+          invalid_name: Name must have 2 or more characters
+          invalid_surname1: First surname must have 2 or more characters
+          invalid_email: Email address must be valid
+          invalid_password: Password does not meet required conditions
+          invalid_password_confirmation: Passwords do not match
+          invalid_date: Birthdate is not valid
+          invalid_date_minor: You can't became a member of ASAAF if you're under 14
+          invalid_id_date_expired: You ID is expired
+        edit:
+          title: Change password

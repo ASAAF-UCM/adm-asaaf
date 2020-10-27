@@ -1,6 +1,6 @@
 es:
   views:
-    member:
+    profile:
       showprofile:
         title: Mi perfil
         full_name: Nombre y apellidos

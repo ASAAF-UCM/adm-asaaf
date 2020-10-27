@@ -1,6 +1,6 @@
 en:
   views:
-    member:
+    profile:
       showprofile:
         title: My profile
         full_name: Full name

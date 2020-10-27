@@ -7,33 +7,6 @@ es:
           DNI: DNI
           NIE: NIE
           Passport: Pasaporte
-        member:
-          attributes:
-            birthdate:
-              blank: La fecha de nacimiento no puede estar vacía.
-            email:
-              blank: El email no puede estar en blanco.
-            id_document_expiration_date:
-              blank: La fecha de caducidad del documento de identidad no puede estar
-                vacía.
-            id_document_number:
-              blank: El número de documento de identidad no puede estar vacío.
-            id_document_type_id:
-              blank: El tipo de documento de identidad no puede estar vacío.
-            image_data:
-              blank: Es necesario añadir una foto del documento de identidad.
-            name:
-              blank: El nombre no puede estar en blanco.
-              too_long: El nombre es demasiado largo (máximo %{count} caracteres).
-              too_short: El nombre es demasiado corto (mínimo %{count} caracteres).
-            password:
-              blank: La contraseña no puede estar en blanco.
-            surname1:
-              blank: El primer apellido no puede estar en blanco.
-              too_long: El primer apellido es demasiado largo (máximo %{count} caracteres).
-              too_short: El primer apellido es demasiado corto (mínimo %{count} caracteres).
-            surname2:
-              too_long: El segundo apellido es demasiado largo (máximo %{count} caracteres).
       validators:
         dni:
           control_character: Control character
@@ -43,19 +16,6 @@ es:
         earlier_than_tomorrow: Earlier than tomorrow
         later_than_today: Later than today
         later_than_yesterday: Later than yesterday
-  app:
-    footer:
-      by: por
-      links:
-        about_us: Acerca de nosotros
-        contact: Contacto
-        social: Redes sociales
-      made_with: Hecho con
-    nav:
-      roles: Roles
-      sign_in: Iniciar sesión
-      sign_out: Cerrar sesión
-      sign_up: Registrarse
   devise:
     confirmations:
       new_title: Reenvío de confirmación
@@ -79,35 +39,6 @@ es:
   errors:
     messages:
       not_saved: No se han guardado los datos
-  helpers:
-    label:
-      member:
-        birthdate: Fecha de nacimiento
-        id_document_expiration_date: Fecha de caducidad del documento de identidad
-        id_document_number: Número del documento de identidad
-        id_document_type_id: Tipo de documento de identidad
-        moodle_name: Nombre en moodle (si estudias en la facultad de Físicas de la
-          UCM)
-        name: Nombre
-        password: Contraseña
-        password_confirmation: Confirmar contraseña
-        submit: Enviar
-        surname1: Primer apellido
-        surname2: Segundo apellido
-    placeholder:
-      member:
-        birthdate: Fecha de nacimiento
-        id_document_expiration_date: Fecha de caducidad del documento de identidad
-        id_document_number: Número del documento de identidad
-        id_document_type_id: Tipo de documento de identidad
-        moodle_name: Nombre en moodle (si estudias en la facultad de Físicas de la
-          UCM)
-        name: Nombre
-        password: Contraseña
-        password_confirmation: Confirmar contraseña
-        current_password: Contraseña actual
-        surname1: Primer apellido
-        surname2: Segundo apellido
   models:
     role:
       names:

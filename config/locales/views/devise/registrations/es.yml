@@ -1,7 +1,45 @@
----
 es:
+  helpers:
+    label:
+      member:
+        birthdate: Fecha de nacimiento
+        id_document_expiration_date: Fecha de caducidad del documento de identidad
+        id_document_number: Número del documento de identidad
+        id_document_type_id: Tipo de documento de identidad
+        moodle_name: Nombre en moodle (si estudias en la facultad de Físicas de la
+          UCM)
+        name: Nombre
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+        submit: Enviar
+        surname1: Primer apellido
+        surname2: Segundo apellido
+    placeholder:
+      member:
+        birthdate: Fecha de nacimiento
+        id_document_expiration_date: Fecha de caducidad del documento de identidad
+        id_document_number: Número del documento de identidad
+        id_document_type_id: Tipo de documento de identidad
+        moodle_name: Nombre en moodle (si estudias en la facultad de Físicas de la
+          UCM)
+        name: Nombre
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+        current_password: Contraseña actual
+        surname1: Primer apellido
+        surname2: Segundo apellido
   views:
     devise:
       registrations:
+        new:
+          title: Registro
+          invalid_name: El nombre ha de tener 2 caracteres o más
+          invalid_surname1: El primer apellido ha de tener 2 caracteres o más
+          invalid_email: La dirección de email ha de ser válida
+          invalid_password: La contraseña no cumple las condiciones requeridas
+          invalid_password_confirmation: Las contraseñas no coinciden
+          invalid_date: La fecha de nacimiento no es válida
+          invalid_date_minor: No puedes hacerte socio de ASAAF si tienes menos de 14 años
+          invalid_id_date_expired: Tu documento de identidad está caducado
         edit:
           title: Cambiar contraseña
