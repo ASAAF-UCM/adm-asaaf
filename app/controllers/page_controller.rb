@@ -9,7 +9,8 @@ class PageController < ApplicationController
     languages = browser.accept_language.map(&:code)
     languages.map!(&:to_sym)
 
-    if I18n.available_locales - languages == I18n.available_locales
+    # Does we support any language in the ACCEPT-LANGUAGES header?
+    if (I18n.available_locales - languages).empty? && languages.any?
       redirect_to("/#{languages.first}")
     else
       redirect_to "/#{I18n.default_locale}"
