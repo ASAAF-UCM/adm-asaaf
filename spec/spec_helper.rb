@@ -2,6 +2,7 @@
 
 require 'with_model'
 require 'shoulda-matchers'
+require 'capybara/rspec'
 
 RSpec.configure do |config|
   config.extend WithModel
@@ -82,4 +83,8 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+end
+
+Capybara.configure do |config|
+  config.default_host = "http://localhost:3000"
 end

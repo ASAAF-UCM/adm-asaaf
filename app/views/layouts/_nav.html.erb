@@ -6,7 +6,7 @@
     <li>
       <% if member_signed_in? %>
         <% if member_allowed? 'admin' %>
-          <%= link_to t('app.nav.roles'), role_index_path, class: 'btn nav-link header-nav' %>
+          <%= link_to t_scoped(:roles), role_index_path, class: 'btn nav-link header-nav' %>
         <% end %>
       <% end %>
     </li>
@@ -24,10 +24,10 @@
       </div>
     <% else %>
       <li>
-  <%= link_to t('app.nav.sign_in'), new_member_session_path, class: 'btn nav-link header-nav'%>
+  <%= link_to t_scoped(:sign_in), new_member_session_path, class: 'btn nav-link header-nav'%>
       </li>
       <li>
-  <%= link_to t('app.nav.sign_up'), new_member_registration_path, class: 'btn btn-outline-light header-nav', id: 'sign_up-button' %>
+  <%= link_to t_scoped(:sign_up), new_member_registration_path, class: 'btn btn-outline-light header-nav', id: 'sign_up-button' %>
       </li>
     <% end %>
   </ul>
