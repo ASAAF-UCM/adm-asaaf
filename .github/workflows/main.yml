@@ -42,9 +42,7 @@ jobs:
 
       - name: Setup the app
         run: |
-          bundle exec rake db:create
-          bundle exec rake db:schema:load
-          yarn:install
+          bundle exec rake db:create db:schema:load yarn:install
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
