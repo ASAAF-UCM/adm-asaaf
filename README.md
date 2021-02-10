@@ -62,7 +62,7 @@ Tras esto, correrán las pruebas y, si todo sale bien, se mergearán las ramas y
 
 ## Autores
 
-* **Ismael Aderdor** - *Trabajo inicial* - [PurpleBooth](https://github.com/iaderdor)
+* **Ismael Aderdor** - *Trabajo inicial* - [iaderdor](https://github.com/iaderdor)
 
 ## License
 
