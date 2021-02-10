@@ -29,19 +29,22 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7.0
-
-      - name: Install dependent libraries
-        run: sudo apt-get install libpq-dev
-
-      - name: Bundle install
+      - name: Set up node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Install dependencies
         run: |
+          sudo apt-get install -yqq libpq-dev
           gem install bundler
+          npm install -g yarn
           bundle install --jobs 4 --retry 3
 
       - name: Setup the app
         run: |
           bundle exec rake db:create
           bundle exec rake db:schema:load
+          yarn:install
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
