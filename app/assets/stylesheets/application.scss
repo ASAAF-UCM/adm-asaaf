@@ -17,8 +17,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,300&display=swap');
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+body > :not(footer) {
+  flex: 1 0 auto;
 }
 
 .main-container {
@@ -131,6 +142,7 @@ footer {
   margin-top: 5rem;
   padding: 1rem 1rem 0rem 1rem;
   color: white;
+  flex-shrink: 0;
 }
 
 .footer-logo {
