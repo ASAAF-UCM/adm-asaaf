@@ -1,0 +1,30 @@
+<footer>
+  <div class="container-flex footer-wrapper row">
+    <div class="footer-logo col-md-3">
+      <%= link_to image_tag("logo_asaaf", alt: "Logo de ASAAF", class: "footer-logo"), "home" %>
+    </div>
+    <ul class="links-contact col-md-3">
+      <li class="links-header">ASAAF</li>
+      <li class="links-link"><%= link_to t_scoped(:about_us), 'https://asaaf.org/sobre-nosotros/'%></li>
+      <li class="links-link"><%= link_to t_scoped(:contact), 'https://asaaf.org/sobre-nosotros/contacto/'%></li>
+    </ul>
+    <ul class="links-help col-md-3">
+      <li class="links-header">Ayuda</li>
+      <li class="links-link">Política de privacidad</li>
+    </ul>
+    <ul class="links-social col-md-3">
+      <li class="links-header"><%= t 'app.footer.links.social' %></li>
+      <li class="links-link"><%= link_to 'Twitter', 'https://twitter.com/asaaf_ucm' %></li>
+      <li class="links-link"><%= link_to 'Facebook', 'https://www.facebook.com/asaafucm/' %></li>
+      <li class="links-link"><%= link_to 'Discord', 'https://discord.gg/2jAgujB' %></li>
+      <li class="links-link"><%= link_to 'Youtube', 'https://www.youtube.com/channel/UCTRIrDYhleO8Zvi3yfLuCkA'%></li>
+      <li class="links-link"><%= link_to 'Instagram', 'https://www.instagram.com/asaaf_ucm/' %></li>
+    </ul>
+  </div>
+  <div class="container-flex footer-sign">
+    <div class="sign"> 
+      <span><%= t_scoped :made_with%></span>
+      <box-icon id="heart" type="solid" name="heart" color="red" animation="tada-hover"></box-icon>
+      <span><%= t_scoped :by %> <a href="https://iaderdor.info">iaderdor</a></span>
+    </div></div>
+</footer>

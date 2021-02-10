@@ -1,0 +1,191 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap
+ *= require_tree .
+ *= require_self
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,300&display=swap');
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.main-container {
+  max-width: 600px;
+  display: flex;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  text-align: center;
+}
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.invisible {
+  display: none;
+}
+.logo {
+  height: 60px;
+  padding-right: 1rem;
+}
+
+.main-navbar {
+  background-color: darkslategrey;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  &:link {
+    color: white;
+    text-decoration: none;
+  }
+  &:visited {
+    color: white;
+    text-decoration: none;
+  }
+  &:hover {
+    color: greenyellow;
+    text-decoration: none;
+  }
+  &:active {
+    color: greenyellow;
+    text-decoration: none;
+  }
+}
+
+#sign_up-button {
+  color: white;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  &:link {
+    color: white;
+    text-decoration: none;
+  }
+  &:visited {
+    color: white;
+    text-decoration: none;
+  }
+  &:hover {
+    color: black;
+    background-color: greenyellow;
+    border-color: greenyellow;
+    text-decoration: none;
+  }
+  &:active {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.nav-left {
+  list-style-type: none;
+}
+
+.nav-right {
+  list-style-type: none;
+}
+
+.btn-outline-light {
+  color: white;
+  font-family: 'Ubuntu';
+  text-transform: uppercase;
+}
+
+.nav-left,
+.nav-right {
+  vertical-align: middle;
+  display: flex;
+}
+
+#flash {
+  max-width: 35rem;
+  margin: 2rem auto 0 auto;
+}
+
+footer {
+  background-color: darkslategrey;
+  margin-top: 5rem;
+  padding: 1rem 1rem 0rem 1rem;
+  color: white;
+}
+
+.footer-logo {
+  height: 7rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+  display: block;
+}
+
+.footer-wrapper {
+  padding: 1rem 3rem;
+}
+
+.links-contact {
+  list-style: none;
+  line-height: 2;
+}
+
+.links-social {
+  list-style: none;
+  line-height: 2;
+}
+
+.links-help {
+  list-style: none;
+  line-height: 2;
+}
+
+.links-header {
+  font-size: 2rem;
+  text-decoration: uppercase;
+}
+
+.links-link {
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+}
+
+.footer-sign {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0.5rem 1rem;
+}
+
+.sign {
+  display: flex;
+  padding: 1rem;
+}
+
+#heart {
+  margin: 0 0.3rem;
+}
+
+.sign a {
+  color: greenyellow;
+  text-decoration: none;
+}

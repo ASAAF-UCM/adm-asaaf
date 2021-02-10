@@ -1,0 +1,33 @@
+en:
+  activerecord:
+    errors:
+      models:
+        member:
+          attributes:
+            birthdate:
+              blank: Birthdate can't be blank.
+            email:
+              blank: Email can't be blank.
+            id_document_expiration_date:
+              blank: Expiration date of the id document can't be blank.
+            id_document_number:
+              blank: Id number can't be blank.
+            id_document_type_id:
+              blank: The ID type can't be blank.
+            image_data:
+              blank: You must add a photo of your id document.
+            name:
+              blank: Name can't be blank.
+              too_long: Name is too long (%{count} characters maximum).
+              too_short: Name is too short (%{count} characters minimum).
+            password:
+              blank: Password can't be blank.
+              too_short: Password is too short (%{count} characters minimum).
+            password_confirmation:
+              confirmation: Password do not match.
+            surname1:
+              blank: First surname can't be blank.
+              too_long: First surname is too long (%{count} characters maximum).
+              too_short: First surname is too short (%{count} characters minumum).
+            surname2:
+              too_long: Second surname is too long(%{count} characters maximum).

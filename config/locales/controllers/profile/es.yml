@@ -1,0 +1,5 @@
+es:
+  controllers:
+    profile:
+      update_password:
+        success: Tu contraseña ha sido cambiada exitosamente.

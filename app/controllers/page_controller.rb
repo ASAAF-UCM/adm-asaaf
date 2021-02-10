@@ -1,18 +1,19 @@
 # frozen_string_literal: true
 
 class PageController < ApplicationController
-  def home; end
+  def home
+    @home_page = true
+  end
 
   def detect_locale
     languages = browser.accept_language.map(&:code)
     languages.map!(&:to_sym)
 
-    languages.each do |lan|
-      if I18n.available_locales.include?(lan)
-        redirect_to "/#{lan}"
-      else
-        redirect_to "/#{I18n.default_locale}"
-      end
+    # Does we support any language in the ACCEPT-LANGUAGES header?
+    if (I18n.available_locales - languages).empty? && languages.any?
+      redirect_to("/#{languages.first}")
+    else
+      redirect_to "/#{I18n.default_locale}"
     end
   end
 end

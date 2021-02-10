@@ -1,5 +1,50 @@
 en:
+  activerecord:
+    errors:
+      models:
+        id_document_type:
+          DNI: DNI
+          NIE: NIE
+          Passport: Passport
+      validators:
+        dni:
+          control_character: DNI control character is not correct.
+          format: Format of the DNI is not correct.
+        earlier_than: Earlier than
+        earlier_than_today: Earlier than today
+        earlier_than_tomorrow: Earlier than tomorrow
+        later_than_today: Later than today
+        later_than_yesterday: Later than yesterday
+  devise:
+    confirmations:
+      new_title: Resend confirmation instructions
+      submit_button: Resend confirmation instructions
+    passwords:
+      edit_title: Change your password
+      new_title: Forgot your password?
+      send_password_instructions: Send me reset password instructions
+      submit_button: Change my password
+    registrations:
+      new_title: Sign up
+      registration_title: Sign up
+      submit: Submit
+      submit_button: Submit
+    sessions:
+      new_title: Sign in
+      sign_in: Sign in
+    unlocks:
+      new_title: Resend unlock instructions
+      resend_button: Resend unlock instructions
+  errors:
+    messages:
+      not_saved: Not saved
+  models:
+    role:
+      names:
+        ":": ":"
   page:
     home:
-      subtitle: "Astronomy since 1994"
-      description: "We are an student's association from the Physical Science Faculty of the Universidad Complutense de Madrid which devote to the outreach of astronomy and astrophysics."
+      description: We are an student's association from the Physical Science Faculty
+        of the Universidad Complutense de Madrid which devote to the outreach of astronomy
+        and astrophysics.
+      subtitle: Astronomy since 1994

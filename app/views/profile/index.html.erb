@@ -1,0 +1,61 @@
+<div>
+<h2><%= t_scoped :title %></h2>
+
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :full_name %>
+  </p>
+  <p class="field_value">
+    <%= full_name(@member) %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :email %>
+  </p>
+  <p class="field_value">
+    <%= @member.email %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :birthdate %>
+  </p>
+  <p class="field_value">
+    <%= @member.birthdate %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :id_number %>
+  </p>
+  <span class="field_value">
+    <%= @member.id_document_number %>
+  </span>
+  <span <%= 'class=expired' if id_expired?(@member) %> >
+    <%= '(' + t_scoped(:expiry)  + ': ' + @member.id_document_expiration_date.to_s  + ')' %>
+  </span>
+  <div>
+    <%# image_tag @member.image_url || "" %>
+  </div>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :member_number %>
+  </p>
+  <p class="field_value">
+    <%= member_number @member %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :moodle_name  %>
+  </p>
+  <p class="field_value">
+    <%= moodle_name @member  %>
+  </p>
+</div>
+
+<%= link_to t_scoped(:change_password) , profile_password_path, class: 'btn btn-primary' %>
+</div>
+

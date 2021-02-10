@@ -1,0 +1,19 @@
+<div>
+<h2><%= t_scoped :title %></h2>
+
+<%= form_with model: @role_allocation, url: role_index_path, method: :post, local: true do |f| %>
+    <div class='form-group col-md-3'>
+      <%= f.label :role_type_id, class: 'invisible' %>
+      <%= f.collection_select(:role_type_id, RoleType.all, :id, :role_name, {}, { :multiple => false }) %>
+    </div>
+
+    <div class="form-field">
+      <%= f.label :member, class: 'invisible' %>
+      <%= f.collection_select(:member_id, Member.all, :id, :email, {}, { :multiple => false }) %>
+    </div>
+
+    <%= f.submit t_scoped('submit'), class: 'btn btn-primary' %>
+<% end %>
+
+
+</div>

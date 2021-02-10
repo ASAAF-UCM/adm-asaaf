@@ -17,6 +17,18 @@ AllCops:
 Style/Documentation:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Metrics/MethodLength:
   Enabled: true
   Max: 50
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Naming/FileName:
+  Exclude:
+    - 'app/validators/DNI_validator.rb'
+    - 'spec/validators/DNI_validator_spec.rb'

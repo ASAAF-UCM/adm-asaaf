@@ -1,5 +1,51 @@
+---
 es:
+  activerecord:
+    errors:
+      models:
+        id_document_type:
+          DNI: DNI
+          NIE: NIE
+          Passport: Pasaporte
+      validators:
+        dni:
+          control_character: Control character
+          format: Format
+        earlier_than: Earlier than
+        earlier_than_today: Earlier than today
+        earlier_than_tomorrow: Earlier than tomorrow
+        later_than_today: Later than today
+        later_than_yesterday: Later than yesterday
+  devise:
+    confirmations:
+      new_title: Reenvío de confirmación
+      submit_button: Reenviar
+    passwords:
+      edit_title: Cambiar contraseña
+      new_title: "¿Has olvidado tu contraseña?"
+      send_password_instructions: Enviar instrucciones para cambiar contraseña
+      submit_button: Cambiar contraseña
+    registrations:
+      new_title: Registro
+      registration_title: Registro
+      submit: Enviar
+      submit_button: Enviar
+    sessions:
+      new_title: Iniciar sesión
+      sign_in: Iniciar sesión
+    unlocks:
+      new_title: Reenvío de instrucciones de desbloqueo
+      resend_button: Reenviar instrucciones de desbloqueo
+  errors:
+    messages:
+      not_saved: No se han guardado los datos
+  models:
+    role:
+      names:
+        ":": ":"
   page:
     home:
-      subtitle: "Astronomía desde 1994"
-      description: "Somos una asociación de estudiantes de la facultad de Ciencias Físicas de la UCM que se dedica a la divulgación de la astronomía y de la astrofísica."
+      description: Somos una asociación de estudiantes de la facultad de Ciencias
+        Físicas de la UCM que se dedica a la divulgación de la astronomía y de la
+        astrofísica.
+      subtitle: Astronomía desde 1994
