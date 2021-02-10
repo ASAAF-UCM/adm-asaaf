@@ -38,8 +38,9 @@ es:
           invalid_email: La dirección de email ha de ser válida
           invalid_password: La contraseña no cumple las condiciones requeridas
           invalid_password_confirmation: Las contraseñas no coinciden
-          invalid_date: La fecha de nacimiento no es válida
-          invalid_date_minor: No puedes hacerte socio de ASAAF si tienes menos de 14 años
+          invalid_birthdate: La fecha de nacimiento no es válida
+          invalid_birthdate_minor: No puedes hacerte socio de ASAAF si tienes menos de 14 años
           invalid_id_date_expired: Tu documento de identidad está caducado
+          invalid_id_number: No es un documento de identidad válido
         edit:
           title: Cambiar contraseña

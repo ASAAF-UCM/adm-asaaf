@@ -50,7 +50,7 @@
         <div class='input-group-text'><%= t 'helpers.label.member.birthdate' %></div>
       </div>
       <%= f.date_field :birthdate, class: 'form-control'%>
-      <div class="invalid-feedback"><%= t_scoped :invalid_date %> </div>
+      <div class="invalid-feedback"><%= t_scoped :invalid_birthdate %> </div>
     </div>
   </div>
 
@@ -63,6 +63,7 @@
     <div class='form-group col-md-9'>
       <%= f.label :id_document_number, class: 'invisible' %>
       <%= f.text_field :id_document_number, class: 'form-control', placeholder: true %>
+      <div class="invalid-feedback"><%= t_scoped :invalid_id_number %> </div>
     </div>
   </div>
 

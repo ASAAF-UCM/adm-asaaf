@@ -36,8 +36,9 @@ en:
           invalid_email: Email address must be valid
           invalid_password: Password does not meet required conditions
           invalid_password_confirmation: Passwords do not match
-          invalid_date: Birthdate is not valid
-          invalid_date_minor: You can't became a member of ASAAF if you're under 14
-          invalid_id_date_expired: You ID is expired
+          invalid_birthdate: Birthdate is not valid
+          invalid_birthdate_minor: You can't became a member of ASAAF if you're under 14
+          invalid_id_date_expired: Your ID is expired
+          invalid_id_number: Not a valid ID number
         edit:
           title: Change password
