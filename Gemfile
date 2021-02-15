@@ -20,7 +20,7 @@ gem 'webpacker', '~> 5.2'
 gem 'browser'
 gem 'devise', '~> 4.7.1'
 gem 'i18n_lazy_scope'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'shrine', '~> 3.3.0'
 
 group :development, :test do
