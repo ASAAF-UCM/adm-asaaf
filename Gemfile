@@ -29,7 +29,7 @@ group :development, :test do
   gem 'faker'
   gem 'i18n-tasks'
   gem 'rails-controller-testing'
-  gem 'rspec-rails', '~> 4.0.0'
+  gem 'rspec-rails', '~> 4.0.2'
   gem 'shoulda-matchers'
   gem 'with_model'
 end
