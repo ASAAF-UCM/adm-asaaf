@@ -12,7 +12,6 @@ gem 'pg'
 gem 'puma', '~> 5.2'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'sass-rails', '>= 6'
-gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.2'
 
