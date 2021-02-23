@@ -17,4 +17,11 @@ class RoleAllocation < ApplicationRecord
     self.is_active = true
     save
   end
+
+  def promote_to(params)
+    self.role_type_id = params[:role_type_id]
+    self.member_id = params[:member_id]
+    self.is_active = true
+    save
+  end
 end
