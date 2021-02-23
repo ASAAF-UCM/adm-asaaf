@@ -2,9 +2,9 @@
   "name": "admasaaf",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.1.2",
-    "@rails/activestorage": "^6.1.2",
-    "@rails/ujs": "^6.1.2",
+    "@rails/actioncable": "^6.1.3",
+    "@rails/activestorage": "^6.1.3",
+    "@rails/ujs": "^6.1.3",
     "@rails/webpacker": "5.2.1",
     "bootstrap": "^4.6.0",
     "boxicons": "^2.0.7",
@@ -14,9 +14,9 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "eslint": "^7.19.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-prettier": "^3.1.4",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "webpack-dev-server": "^3.11.2"
   }
 }

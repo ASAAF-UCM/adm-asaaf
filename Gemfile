@@ -10,9 +10,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jbuilder', '~> 2.11'
 gem 'pg'
 gem 'puma', '~> 5.2'
-gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
+gem 'rails', '~> 6.1.3'
 gem 'sass-rails', '>= 6'
-gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.2'
 
@@ -20,7 +19,7 @@ gem 'webpacker', '~> 5.2'
 gem 'browser'
 gem 'devise', '~> 4.7.1'
 gem 'i18n_lazy_scope'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'shrine', '~> 3.3.0'
 
 group :development, :test do
@@ -29,13 +28,13 @@ group :development, :test do
   gem 'faker'
   gem 'i18n-tasks'
   gem 'rails-controller-testing'
-  gem 'rspec-rails', '~> 4.0.0'
+  gem 'rspec-rails', '~> 4.0.2'
   gem 'shoulda-matchers'
   gem 'with_model'
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.0.5', '< 3.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
