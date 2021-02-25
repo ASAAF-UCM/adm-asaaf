@@ -47,7 +47,10 @@ body > :not(footer) {
 
 .center-flex {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 2rem;
 }
 
 .invisible {

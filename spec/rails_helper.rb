@@ -75,6 +75,8 @@ RSpec.configure do |config|
 
   # Adding login methods for members
   config.include Helpers::Authentication, type: :request
+
+  config.include Warden::Test::Helpers
 end
 
 Shoulda::Matchers.configure do |config|

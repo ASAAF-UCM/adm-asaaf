@@ -1,0 +1,5 @@
+es:
+  views:
+    member_admin:
+      index:
+        title: Panel de administración

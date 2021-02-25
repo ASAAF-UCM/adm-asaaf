@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       put 'password/edit', to: 'profile#update_password'
     end
 
-    resources :member_administration
+    resources :member_admin
 
     resources :role, only: %i[index new create destroy update]
   end

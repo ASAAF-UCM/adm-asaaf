@@ -25,5 +25,46 @@ FactoryBot.define do
     end
     email { Faker::Internet.email(domain: 'example') }
     password { '97khj89ds7fd9ihu' }
+
+    factory :admin_member do
+      after(:create) do |member, _evaluator|
+        ra = RoleAllocation.new
+        ra.promote_to_admin! member
+      end
+    end
+
+    factory :accounting_member do
+      after(:create) do |member, _evaluator|
+        ra = RoleAllocation.new
+        ra.promote_to({
+                        role_type_id: 2,
+                        member_id: member.id
+                      })
+      end
+    end
+
+    after(:create) do |member, _evaluator|
+      member.update confirmed_at: DateTime.now
+    end
+
+    factory :secretary_member do
+      after(:create) do |member, _evaluator|
+        ra = RoleAllocation.new
+        ra.promote_to({
+                        role_type_id: 3,
+                        member_id: member.id
+                      })
+      end
+    end
+
+    factory :loan_member do
+      after(:create) do |member, _evaluator|
+        ra = RoleAllocation.new
+        ra.promote_to({
+                        role_type_id: 4,
+                        member_id: member.id
+                      })
+      end
+    end
   end
 end

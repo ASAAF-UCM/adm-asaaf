@@ -10,6 +10,7 @@ es:
       nav:
         profile: Perfil
         roles: Roles
+        admin_dashboard: Panel de administración
         sign_in: Iniciar sesión
         sign_out: Cerrar sesión
         sign_up: Registrarse

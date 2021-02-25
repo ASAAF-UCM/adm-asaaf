@@ -1,0 +1,5 @@
+en:
+  views:
+    member_admin:
+      index:
+        title: Admin dashboard

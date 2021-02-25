@@ -3,10 +3,13 @@
     <li>
       <%= link_to image_tag("logo_asaaf", alt: "Logo de ASAAF", class: "logo"), root_path %>
     </li>
-    <li>
+    <li class="nav-left btn-group">
       <% if member_signed_in? %>
         <% if member_allowed? 'admin' %>
           <%= link_to t_scoped(:roles), role_index_path, class: 'btn nav-link header-nav' %>
+        <% end %>
+        <% if member_allowed? %w[admin accounting secretary loans] %>
+          <%= link_to t_scoped(:admin_dashboard), member_admin_index_path, class: 'btn nav-link header-nav' %>
         <% end %>
       <% end %>
     </li>
