@@ -1,0 +1,24 @@
+<h2> <%= t_scoped :title %></h2>
+
+<h3> <%= t_scoped :members %></h3>
+
+<table class="table">
+  <thead>
+    <th scope='col'> <%= t_scoped :member_number %></th>
+    <th scope='col'> <%= t_scoped :email %></th>
+    <th scope='col'> <%= t_scoped :name %></th>
+    <th scope='col'> <%= t_scoped :surnames %></th>
+  </thead>
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <th scope="row">
+          <%= link_to member.member_number, member_admin_path(member.id) %>
+        </th>
+        <td> <%= member.email %></td>
+        <td> <%= member.name %></td>
+        <td> <%= member.surname1 + ' ' + member.surname2 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
