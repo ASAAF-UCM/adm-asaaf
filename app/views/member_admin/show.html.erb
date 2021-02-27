@@ -1,0 +1,180 @@
+<div>
+<h1><%= MemberController.helpers.full_name(@member) %>
+</h1>
+<div class="badges">
+<% if @member.member_number.nil? %>
+  <span class="badge bg-secondary">
+    <%= t_scoped :no_member %>
+  </span> 
+<% elsif %>
+  <span>#<%= MemberController.helpers.member_number(@member) %></span>
+<% end %>
+<% unless @member.member_type_id == 3 || @member.member_type_id.nil? %>
+  <span class="badge bg-primary">
+    <%= MemberType.find(@member.member_type_id).name %>
+  </span>
+<% end %>
+<% if MemberController.helpers.id_expired? @member %>
+  <span class="badge bg-danger">
+    <%= t_scoped :id_expired %>
+  </span>
+<% end %>
+<% if @member.access_locked? %>
+  <span class="badge bg-danger">
+    <%= t_scoped :account_locked %>
+  </span>
+<% end %>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :name %>
+  </p>
+  <p class="field_value">
+    <%= @member.name %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :surname1 %>
+  </p>
+  <p class="field_value">
+    <%= @member.surname1 %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :surname2 %>
+  </p>
+  <p class="field_value">
+    <%= @member.surname2 %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :moodle_name %>
+  </p>
+  <p class="field_value">
+    <%= @member.moodle_name %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :email %>
+  </p>
+  <p class="field_value">
+    <%= @member.email %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :id_document %>
+  </p>
+  <p class="field_value">
+  <%= IdDocumentType.find(@member.id_document_type_id).name %>
+    <%= @member.id_document_number %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :birthdate %>
+  </p>
+  <p class="field_value">
+  <%= @member.birthdate %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :active_member_last_time %>
+  </p>
+  <p class="field_value">
+  <%= @member.last_active_member_confirmation %>
+  (
+  <%= distance_of_time_in_words Date.today, @member.last_active_member_confirmation %>
+  )
+
+</div>
+
+<div class="member_admin_account_data">
+<h2>
+  <%= t_scoped :account_data %>
+</h2>
+
+<table class='table'>
+  <% if @member.access_locked? %>
+  <tr>
+    <td>
+      <%= t_scoped :account_locked_on %>
+    </td>
+    <td>
+      <%= @member.locked_at %>
+      <%= link_to t_scoped(:unlock_account),
+      unlock_account_path(id: @member.id),
+      method: :post,
+      class: 'btn btn-primary btn-sm',
+      id: 'unlock_account_button'
+    %>
+    </td>
+  </tr>
+
+  <% end %>
+  <tr>
+    <td>
+      <%= t_scoped :last_login_time %>
+    </td>
+    <td>
+      <%= sign_in_time @member %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t_scoped :last_login_ip %>
+    </td>
+    <td>
+      <%= sign_in_ip @member %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t_scoped :email_confirmed_at %>
+    </td>
+    <td>
+      <%= email_confirmed_at @member %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t_scoped :account_created_on %>
+    </td>
+    <td>
+      <%= @member.created_at %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t_scoped :member_since %>
+    </td>
+    <td>
+      <%= member_since @member%>
+    </td>
+  </tr>
+</table>
+
+<div class="member_admin_buttons">
+  <%= link_to t_scoped(:send_password_recovery_email),
+        send_reset_password_instructions_path(id: @member.id),
+        method: :post,
+        class: 'btn btn-primary'
+  %>
+  <% unless @member.access_locked? %>
+    <%= link_to t_scoped(:lock_account),
+          lock_account_path(id: @member.id),
+          method: :post,
+          class: 'btn btn-danger'
+     %>
+   <% end %>
+</div>
+
+</div>
+</div>
+
+

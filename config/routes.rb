@@ -17,6 +17,13 @@ Rails.application.routes.draw do
 
     resources :member_admin
 
+    scope :member_admin do
+      post 'confirm_email', to: 'member_admin#confirm_email'
+      post 'send_reset_password_instructions', to: 'member_admin#reset_email'
+      post 'unlock_account', to: 'member_admin#unlock_account'
+      post 'lock_account', to: 'member_admin#lock_account'
+    end
+
     resources :role, only: %i[index new create destroy update]
   end
 

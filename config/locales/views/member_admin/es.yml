@@ -3,3 +3,28 @@ es:
     member_admin:
       index:
         title: Panel de administración
+        members: Socios
+      show:
+        no_member: No es socio
+        account_locked: Cuenta bloqueada
+        account_locked_on: Cuenta bloqueda el
+        unlock_account: Desbloquear
+        name: Nombre
+        surname1: Primer apellido
+        surname2: Segundo apellido
+        moodle_name: Nombre en moodle
+        email: Email
+        id_document: Documento de identidad
+        id_expired: Documento de identidad caducado
+        confirm_email: Confirmar email
+        account_data: Datos de la cuenta
+        last_login_time: Hora del último login
+        did_not_sign_in: No ha iniciado sesión
+        last_login_ip: IP del último login
+        email_confirmed_at: Hora y fecha de confirmación del email
+        account_created_on: Hora y fecha de creación de la cuenta
+        member_since: Socio desde
+        send_password_recovery_email: Enviar email de recuperación de contraseña
+        lock_account: Bloquear cuenta
+        active_member_last_time: Última confirmación como socio activo
+        birthdate: Fecha de nacimiento

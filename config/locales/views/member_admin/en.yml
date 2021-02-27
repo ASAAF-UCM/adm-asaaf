@@ -3,3 +3,28 @@ en:
     member_admin:
       index:
         title: Admin dashboard
+        members: Members
+      show:
+        no_member: Not a member
+        account_locked: Account locked
+        account_locked_on: Account locked on
+        unlock_account: Unlock
+        name: Name
+        surname1: First surname
+        surname2: Second surname
+        moodle_name: Moodle name
+        email: Email
+        id_document: Id document
+        id_expired: Id document expired
+        confirm_email: Confirm email
+        account_data: Account data
+        last_login_time: Last login time
+        did_not_sign_in: Has not signed in
+        last_login_ip: Last login IP
+        email_confirmed_at: Email confirmed at
+        account_created_on: Account created on
+        member_since: Member since
+        send_password_recovery_email: Send password email recovery
+        lock_account: Lock account
+        active_member_last_time: Last confirmation as active member
+        Birthdate: Birhdate

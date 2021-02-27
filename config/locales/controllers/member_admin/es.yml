@@ -1,0 +1,10 @@
+es:
+  controllers:
+    member_admin:
+      unlock_account:
+        account_was_unlocked: La cuenta se ha desbloqueado.
+      lock_account:
+        account_was_locked: La cuenta se ha bloqueado.
+      reset_email:
+        password_instructions_sent: Las instrucciones para cambiar la contraseña de la cuenta han sido mandadas.
+

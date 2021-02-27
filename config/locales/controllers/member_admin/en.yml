@@ -1,0 +1,9 @@
+en:
+  controllers:
+    member_admin:
+      unlock_account:
+        account_was_unlocked: Account was unlocked.
+      lock_account:
+        account_was_locked: Account was locked.
+      reset_email:
+        password_instructions_sent: The instructions to change the password were sent.
