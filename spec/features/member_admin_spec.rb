@@ -20,10 +20,26 @@ RSpec.describe 'MemberAdmins', type: :feature do
   end
 
   describe 'when logged and being role admin' do
-    it 'shows index' do
+    before do
       login_as(FactoryBot.create(:admin_member))
+    end
+
+    let(:member) { FactoryBot.create(:member) }
+    let(:random_member) { FactoryBot.create(:random_member) }
+
+    it 'shows index' do
       visit member_admin_index_path
       expect(page).to have_current_path(member_admin_index_path)
+    end
+
+    it '/member_admin/id show a member' do
+      visit member_admin_path(locale: :en, id: member.id)
+      expect(page).to have_http_status(:success)
+    end
+
+    it '/member_admin/id show a member with a member id' do
+      visit member_admin_path(locale: :en, id: random_member.id)
+      expect(page).to have_http_status(:success)
     end
   end
 

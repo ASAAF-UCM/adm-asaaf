@@ -88,9 +88,12 @@
   </p>
   <p class="field_value">
   <%= @member.last_active_member_confirmation %>
-  (
-  <%= distance_of_time_in_words Date.today, @member.last_active_member_confirmation %>
-  )
+  <% unless @member.last_active_member_confirmation.nil? %>
+    (
+    <%= distance_of_time_in_words Date.today, @member.last_active_member_confirmation %>
+    )
+  <% end %>
+
 
 </div>
 
