@@ -9,9 +9,9 @@
     <th scope='col'> <%= t_scoped :name %></th>
     <th scope='col'> <%= t_scoped :surnames %></th>
   </thead>
-  <tbody>
-    <% @members.each do |member| %>
-      <tr>
+  <tbody class='admin_members_table_body'>
+    <% @members.each_with_index do |member, idx| %>
+      <tr class='admin_members_table_row' id=<%= idx %>>
         <th scope="row">
           <%= link_to member.member_number, member_admin_path(member.id) %>
         </th>
@@ -22,3 +22,8 @@
     <% end %>
   </tbody>
 </table>
+
+<nav class='member_navigation' aria-label='Member navigation'>
+  <ul class="pagination">
+  </ul>
+</nav>
