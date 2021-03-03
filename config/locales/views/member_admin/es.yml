@@ -1,10 +1,16 @@
 es:
   views:
     member_admin:
+      edit:
+        title_member: Edición de datos del socio
+        title_no_member: Edición de datos del no-socio
+        submit: Actualizar datos
       index:
         title: Panel de administración
         members: Socios
       show:
+        edit_member_data: Editar datos del socio
+        member_number: Número de socio
         no_member: No es socio
         account_locked: Cuenta bloqueada
         account_locked_on: Cuenta bloqueda el

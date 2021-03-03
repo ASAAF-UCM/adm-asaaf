@@ -1,10 +1,16 @@
 en:
   views:
     member_admin:
+      edit:
+        title_member: Edit data from member
+        title_no_member: Edit data from non-member
+        submit: Update data
       index:
         title: Admin dashboard
         members: Members
       show:
+        edit_member_data: Edit member data
+        member_number: Member number
         no_member: Not a member
         account_locked: Account locked
         account_locked_on: Account locked on

@@ -7,4 +7,6 @@ es:
         account_was_locked: La cuenta se ha bloqueado.
       reset_email:
         password_instructions_sent: Las instrucciones para cambiar la contraseña de la cuenta han sido mandadas.
+      update:
+        success: El usuario ha sido actualizado con éxito
 

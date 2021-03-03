@@ -41,4 +41,12 @@ module MemberAdminHelper
       curr
     end
   end
+
+  def member_admin_edit_title(member)
+    if member.member_number.nil?
+      t_scoped :title_no_member
+    else
+      "#{t_scoped(:title_member)} #{member.member_number}"
+    end
+  end
 end

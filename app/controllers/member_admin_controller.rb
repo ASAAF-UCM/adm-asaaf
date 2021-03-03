@@ -10,14 +10,26 @@ class MemberAdminController < ApplicationController
 
   def create; end
 
-  def update; end
+  def update
+    @member = Member.find(params[:id])
+    if @member.update(update_params)
+      flash[:success] = t_scoped :success
+      redirect_to member_admin_path(id: @member.id)
+    else
+      flash.now[:danger] = @member.errors.messages.values.first.first
+      render :edit_member_admin
+    end
+  end
 
-  def edit; end
+  def edit
+    @member = Member.find(params[:id])
+  end
 
   def destroy; end
 
   def index
     @members = Member.where.not(member_number: nil).order(member_number: :asc)
+    @not_members = Member.where(member_number: nil).order(created_at: :asc)
   end
 
   def show
@@ -49,5 +61,21 @@ class MemberAdminController < ApplicationController
     @member.lock_access!
     flash.alert = t_scoped :account_was_locked
     redirect_to member_admin_path(id: @member.id)
+  end
+
+  private
+
+  def update_params
+    params
+      .require(:member)
+      .permit(:name,
+              :surname1,
+              :surname2,
+              :email,
+              :birthdate,
+              :id_document_number,
+              :id_document_type_id,
+              :id_document_expiration_date,
+              :moodle_name)
   end
 end

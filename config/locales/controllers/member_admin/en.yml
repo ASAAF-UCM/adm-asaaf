@@ -7,3 +7,5 @@ en:
         account_was_locked: Account was locked.
       reset_email:
         password_instructions_sent: The instructions to change the password were sent.
+      update:
+        success: User was updated succesfully

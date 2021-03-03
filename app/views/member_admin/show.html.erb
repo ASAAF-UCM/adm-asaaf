@@ -7,7 +7,7 @@
     <%= t_scoped :no_member %>
   </span> 
 <% elsif %>
-  <span>#<%= MemberController.helpers.member_number(@member) %></span>
+  <span><%= t_scoped :member_number %> <%= MemberController.helpers.member_number(@member) %></span>
 <% end %>
 <% unless @member.member_type_id == 3 || @member.member_type_id.nil? %>
   <span class="badge bg-primary">
@@ -25,6 +25,8 @@
   </span>
 <% end %>
 </div>
+
+
 <div class="profile_field">
   <p class="field_name">
     <%= t_scoped :name %>
@@ -175,6 +177,11 @@
           class: 'btn btn-danger'
      %>
    <% end %>
+   <%= link_to t_scoped(:edit_member_data),
+         edit_member_admin_path(id: @member.id),
+         method: :get,
+         class: 'btn btn-primary'
+   %>
 </div>
 
 </div>
