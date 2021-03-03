@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.7.2'
 
 # Rails instalation gems
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -29,6 +29,7 @@ group :development, :test do
   gem 'faker'
   gem 'i18n-tasks'
   gem 'rails-controller-testing'
+  gem 'rspec'
   gem 'rspec-rails', '~> 4.0.2'
   gem 'shoulda-matchers'
   gem 'with_model'
