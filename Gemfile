@@ -7,6 +7,7 @@ ruby '2.7.0'
 
 # Rails instalation gems
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'jbuilder', '~> 2.11'
 gem 'pg'
 gem 'puma', '~> 5.2'

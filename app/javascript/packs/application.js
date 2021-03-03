@@ -8,7 +8,6 @@ require('turbolinks').start();
 require('@rails/activestorage').start();
 require('channels');
 
-import 'bootstrap';
 import 'boxicons';
 import '../src/registration';
 import '../src/member_admin';
