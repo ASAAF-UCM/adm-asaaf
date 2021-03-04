@@ -6,6 +6,7 @@ es:
         id_document_expiration_date: Fecha de caducidad del documento de identidad
         id_document_number: Número del documento de identidad
         id_document_type_id: Tipo de documento de identidad
+        image_data: Imagen del documento de identidad
         moodle_name: Nombre en moodle (si estudias en la facultad de Físicas de la
           UCM)
         name: Nombre
