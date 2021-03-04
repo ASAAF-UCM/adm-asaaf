@@ -8,12 +8,10 @@ class ApplicationController < ActionController::Base
   helper_method :member_allowed?
 
   def get_user_roles(member)
-    roles = []
-    member.role_allocation_ids.each do |role_allocation|
-      roles.append RoleType.find(RoleAllocation.find(role_allocation)\
-                                 .role_type_id).role_name
-    end
-    roles
+    RoleAllocation
+      .joins(:member, :role_type)
+      .where(member_id: member.id, is_active: true)
+      .pluck(:role_name)
   end
 
   def member_allowed?(roles)
