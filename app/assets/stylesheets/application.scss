@@ -185,6 +185,30 @@ footer {
 .links-link {
   font-size: 1rem;
   letter-spacing: 0.05rem;
+  color: white;
+}
+
+.links-link > a {
+  &:link {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: black;
+    color: greenyellow;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .footer-sign {
