@@ -4,12 +4,24 @@
 <%= form_with model: @role_allocation, url: role_index_path, method: :post, local: true do |f| %>
     <div class='form-group col-md-3 mb-3'>
       <%= f.label :role_type_id, class: 'form-label' %>
-      <%= f.collection_select(:role_type_id, RoleType.all, :id, :role_name, {}, { class: 'form-select', :multiple => false }) %>
+      <%= f.collection_select(:role_type_id,
+                              RoleType.all,
+                              :id,
+                              ->(element) { translate_role_type_name(element) },
+                              {},
+                              { class: 'form-select', :multiple => false }) 
+      %>
     </div>
 
     <div class="form-field mb-3">
       <%= f.label :member, class: 'form-label' %>
-      <%= f.collection_select(:member_id, Member.all, :id, :email, {}, { class: 'form-select', :multiple => false }) %>
+      <%= f.collection_select(:member_id,
+                              Member.where.not(member_number: nil),
+                              :id,
+                              :email,
+                              {},
+                              { class: 'form-select', :multiple => false })
+      %>
     </div>
 
     <%= f.submit t_scoped('submit'), class: 'btn btn-primary' %>
