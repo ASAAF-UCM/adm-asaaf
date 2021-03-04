@@ -9,6 +9,7 @@ ruby '2.7.2'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'jbuilder', '~> 2.11'
+gem 'jquery-rails'
 gem 'pg'
 gem 'puma', '~> 5.2'
 gem 'rails', '~> 6.1.3'
