@@ -1,0 +1,7 @@
+es:
+  helpers:
+    label:
+      role_allocation:
+        role_type_id: Tipo de rol
+        member: Socio
+
