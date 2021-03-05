@@ -70,4 +70,29 @@ RSpec.describe Member, type: :model do
       expect(member.save).to eq(false)
     end
   end
+
+  context 'when member exists and id has expired' do
+    let(:member) { create(:random_member) }
+
+    it 'is valid if using update_password' do
+      member.id_document_expiration_date = Time.zone.today + 1.day
+      update_params = { password: '12341234', password_confirmation: '12341234' }
+
+      expect(member.update_password(update_params)).to eq(true)
+    end
+
+    it 'is not valid if password do not match and using update_password' do
+      member.id_document_expiration_date = Time.zone.today + 1.day
+      update_params = { password: '12341234', password_confirmation: '23452345' }
+
+      expect(member.update_password(update_params)).to eq(false)
+    end
+
+    it 'is not valid if password is not valid and using update_password' do
+      member.id_document_expiration_date = Time.zone.today + 1.day
+      update_params = { password: '1234', password_confirmation: '1234' }
+
+      expect(member.update_password(update_params)).to eq(false)
+    end
+  end
 end
