@@ -32,4 +32,11 @@ class Member < ApplicationRecord
     self.password = update_params[:password]
     save(skip_for_profile: true)
   end
+
+  def roles
+    RoleAllocation
+      .joins(:member, :role_type)
+      .where(member_id: self.id)
+      .pluck(:role_name)
+  end
 end

@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def member_allowed?(roles)
     if member_signed_in?
-      get_user_roles(current_member).each do |member_role|
+      current_member.roles.each do |member_role|
         return true if member_role.in? roles
       end
     end
