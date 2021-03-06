@@ -26,14 +26,17 @@ gem 'shrine', '~> 3.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'i18n-tasks'
   gem 'rails-controller-testing'
   gem 'rspec'
   gem 'rspec-rails', '~> 4.0.2'
   gem 'shoulda-matchers'
   gem 'with_model'
+end
+
+group :development, :test, :staging do
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do

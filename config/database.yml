@@ -16,6 +16,12 @@ test:
   username: postgres
   password: 1234
 
+staging:
+  <<: *default
+  database: adm_asaaf
+  username: adm_asaaf
+  password: <%= Rails.application.credentials.dig Rails.env.to_sym, :postgres, :password %>
+
 production:
   <<: *default
   database: adm_asaaf
