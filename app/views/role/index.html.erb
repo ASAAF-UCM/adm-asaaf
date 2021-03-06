@@ -15,9 +15,10 @@
       <tr>
         <th scope="row"><%= role.id %></th>
         <td>
-          <%= link_to full_name(role.member), member_admin_path(role.member.id) %>
+          <%= link_to "#{role.name} #{role.surname1} #{role.surname2}",
+            member_admin_path(role.member_id) %>
         </td>
-        <td><%= t 'models.role.names.' + role.role_type.role_name %></td>
+        <td><%= t 'models.role.names.' + role.role_name %></td>
         <td class="center">
           <%= link_to role_path(role), method: :patch do %>
             <% if role.is_active %>
