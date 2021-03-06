@@ -32,4 +32,9 @@ es:
               too_short: El primer apellido es demasiado corto (mínimo %{count} caracteres).
             surname2:
               too_long: El segundo apellido es demasiado largo (máximo %{count} caracteres).
-
+  models:
+    role:
+      member:
+        member_type_name:
+          dropped_down: Socio dado de baja
+          no_member: No es socio

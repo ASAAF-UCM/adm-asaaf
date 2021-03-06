@@ -25,10 +25,19 @@ class MemberAdminController < ApplicationController
     @member = Member.find(params[:id])
   end
 
-  def destroy; end
+  def destroy
+    @member = Member.find(params[:id])
+    if @member.drop_out(requested_by: current_member)
+      flash[:success] = t_scoped :account_was_deleted
+      redirect_to member_admin_path(id: @member.id)
+    else
+      flash.now[:danger] = @member.errors.messages
+      render 'show'
+    end
+  end
 
-  def index
-    @members = Member.where.not(member_number: nil).order(member_number: :asc)
+def index
+    @members = Member.where.not(member_number: [nil, 0]).order(member_number: :asc)
     @not_members = Member.where(member_number: nil).order(created_at: :asc)
   end
 

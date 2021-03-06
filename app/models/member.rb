@@ -33,10 +33,50 @@ class Member < ApplicationRecord
     save(skip_for_profile: true)
   end
 
+  def drop_out(params = nil)
+    # We don't want to remove the actual user
+    unless params.nil?
+      return false if params[:requested_by] == self
+    end
+    
+    # We don't want to remove a member with a role
+    return false unless self.roles.length.zero?
+
+    lock_access!({ send_instructions: false })
+    save
+
+    skip_reconfirmation!
+    update_attribute :email, "#{id}@example.com"
+
+    update_attribute :name, '--removed--'
+    update_attribute :surname1, '--removed--'
+    update_attribute :surname2, ''
+    update_attribute :birthdate, Date.new(1900, 1, 1)
+    update_attribute :id_document_expiration_date, Date.new(1900, 1, 1)
+    update_attribute :id_document_number, '13-J'
+    update_attribute :member_number, 0
+    update_attribute :member_type_id, 4
+    update_attribute :member_since, nil
+    update_attribute :last_active_member_confirmation, nil
+    update_attribute :moodle_name, nil
+    update_attribute :reset_password_token, nil
+    update_attribute :reset_password_sent_at, nil
+    update_attribute :remember_created_at, nil
+    update_attribute :current_sign_in_at, nil
+    update_attribute :last_sign_in_at, nil
+    update_attribute :current_sign_in_ip, nil
+    update_attribute :last_sign_in_ip, nil
+    update_attribute :confirmation_token, nil
+    update_attribute :confirmed_at, nil
+    update_attribute :confirmation_sent_at, nil
+    update_attribute :unconfirmed_email, nil
+    update_attribute :unlock_token, nil
+  end
+
   def roles
     RoleAllocation
       .joins(:member, :role_type)
-      .where(member_id: self.id)
+      .where(member_id: self.id, is_active: true)
       .pluck(:role_name)
   end
 end

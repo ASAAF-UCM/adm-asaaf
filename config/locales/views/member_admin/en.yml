@@ -9,7 +9,6 @@ en:
         title: Admin dashboard
         members: Members
       show:
-        edit_member_data: Edit member data
         member_number: Member number
         no_member: Not a member
         account_locked: Account locked
@@ -30,7 +29,20 @@ en:
         email_confirmed_at: Email confirmed at
         account_created_on: Account created on
         member_since: Member since
-        send_password_recovery_email: Send password email recovery
-        lock_account: Lock account
         active_member_last_time: Last confirmation as active member
         Birthdate: Birhdate
+      buttons:
+        buttons:
+          drop_down_member: Drop down member
+          edit_member_data: Edit member data
+          send_password_recovery_email: Send password email recovery
+        lock_account: Lock account
+      dropdownmodal:
+        drop_down_member_modal_title: You're about to drop out a member
+        drop_down_member_modal_text: >-
+          You're about to remove the data of this person from the database.
+          This action is irreversible.
+        drop_down_member_modal_instructions: >-
+          If you understand the consecuences of this action,
+          write down the name of the person in the next field
+        drop_down_member_modal_submit: Drop down

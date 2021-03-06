@@ -21,7 +21,7 @@ module MemberAdminHelper
 
   def email_confirmed_at(member)
     curr = member.confirmed_at
-    if curr.nil?
+    if curr.nil? && member.member_number != 0
       (
         link_to t_scoped(:confirm_email),
                 confirm_email_path(id: member.id),

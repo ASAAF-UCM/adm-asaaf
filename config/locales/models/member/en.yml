@@ -31,3 +31,9 @@ en:
               too_short: First surname is too short (%{count} characters minumum).
             surname2:
               too_long: Second surname is too long(%{count} characters maximum).
+  models:
+    role:
+      member:
+        member_type_name:
+          dropped_down: Dropped down member
+          no_member: Not a member

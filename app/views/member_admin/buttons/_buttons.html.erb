@@ -1,0 +1,30 @@
+<% unless @member.member_number == 0 %>
+<div class="member_admin_buttons">
+  <%= link_to t_scoped(:send_password_recovery_email),
+        send_reset_password_instructions_path(id: @member.id),
+        method: :post,
+        class: 'btn btn-primary'
+  %>
+  <% unless @member.access_locked? %>
+    <%= link_to t_scoped(:lock_account),
+          lock_account_path(id: @member.id),
+          method: :post,
+          class: 'btn btn-danger'
+    %>
+  <% end %>
+  <%= link_to t_scoped(:edit_member_data),
+        edit_member_admin_path(id: @member.id),
+        method: :get,
+        class: 'btn btn-primary'
+  %>
+  <% if @member.roles.length.zero? %>
+    <button type="button"
+            class="btn btn-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#removeMemberModal"
+            >
+            <%= t_scoped :drop_down_member %>
+    </button>
+  <% end %>
+</div>
+<% end %>

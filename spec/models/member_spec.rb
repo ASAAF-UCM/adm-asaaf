@@ -95,4 +95,109 @@ RSpec.describe Member, type: :model do
       expect(member.update_password(update_params)).to eq(false)
     end
   end
+
+  context 'when a member is not a member anymore' do
+    member = FactoryBot.create(:random_member)
+    member.drop_out
+
+    it 'is valid if name is --removed--' do
+      expect(member.name).to eq('--removed--')
+    end
+
+    it 'is valid if surname1 is --removed--' do
+      expect(member.surname1).to eq('--removed--')
+    end
+
+    it 'is valid if surname2 is blank' do
+      expect(member.surname2).to be_blank
+    end
+
+    it 'is valid birthdate is 1900-01-01' do
+      expect(member.birthdate).to eq(Date.new(1900, 1, 1))
+    end
+
+    it 'is valid if id_document_expiration_date is 1900-01-01' do
+      expect(member.id_document_expiration_date).to eq(Date.new(1900, 1, 1))
+    end
+
+    it 'is valid if id_document_number is 13-J' do
+      expect(member.id_document_number).to eq('13-J')
+    end
+
+    it 'is valid if member_number is 0' do
+      expect(member.member_number).to eq(0)
+    end
+
+    it 'is valid if member_type_id is 4' do
+      expect(member.member_type_id).to eq(4)
+    end
+
+    it 'is valid if member_since is nil' do
+      expect(member.member_since).to eq(nil)
+    end
+
+    it 'is valid if last_active_member_confirmation is nil' do
+      expect(member.last_active_member_confirmation).to eq(nil)
+    end
+
+    it 'is valid if moodle_name is nil' do
+      expect(member.moodle_name).to eq(nil)
+    end
+
+    it 'is valid if email is the member id@example.com' do
+      expect(member.email).to eq("#{member.id}@example.com")
+    end
+
+    it 'is valid if reset_password_token is nil' do
+      expect(member.reset_password_token).to eq(nil)
+    end
+
+    it 'is valid if reset_password_sent_at is nil' do
+      expect(member.reset_password_sent_at).to eq(nil)
+    end
+
+    it 'is valid if remember_created_at is nil' do
+      expect(member.remember_created_at).to eq(nil)
+    end
+
+    it 'is valid if current_sign_in_at is nil' do
+      expect(member.current_sign_in_at).to eq(nil)
+    end
+
+    it 'is valid if last_sign_in_at is nil' do
+      expect(member.last_sign_in_at).to eq(nil)
+    end
+
+    it 'is valid if current_sign-in_ip is nil' do
+      expect(member.current_sign_in_ip).to eq(nil)
+    end
+
+    it 'is valid if last_sign_in_ip is nil' do
+      expect(member.last_sign_in_ip).to eq(nil)
+    end
+
+    it 'is valid if confirmation_token is nil' do
+      expect(member.confirmation_token).to eq(nil)
+    end
+
+    it 'is valid if confirmed_at is nil' do
+      expect(member.confirmed_at).to eq(nil)
+    end
+
+    it 'is valid if confirmation_sent_at is nil' do
+      expect(member.confirmation_sent_at).to eq(nil)
+    end
+
+    it 'is valid if unconfirmed_email is nil' do
+      expect(member.unconfirmed_email).to eq(nil)
+    end
+
+    it 'is valid if unlock_token is nil' do
+      expect(member.unlock_token).to eq(nil)
+    end
+
+    it 'is valid if locked_at is NOT nil' do
+      expect(member.locked_at).not_to eq(nil)
+    end
+  end
 end

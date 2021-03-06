@@ -1,0 +1,38 @@
+<div class="modal fade" id="removeMemberModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <%= t_scoped :drop_down_member_modal_title %>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <%= t_scoped :drop_down_member_modal_text %>
+        </p>
+        <p>
+          <%= t_scoped :drop_down_member_modal_instructions %>:
+        </p>
+        <form action="">
+          <div class="mb-3">
+            <label for="memberName" class="form-label invisible">Full name</label>
+            <input type="text"
+                   class="form-control"
+                   id="memberName"
+                   placeholder="<%= full_name @member %>">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <%= button_to t_scoped(:drop_down_member_modal_submit),
+              member_admin_path(id: @member.id),
+              method: :delete,
+              class: 'btn btn-danger',
+              disabled: true,
+              id: 'drop-down-member-button'
+        %>
+      </div>
+    </div>
+  </div>
+</div>
