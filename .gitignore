@@ -60,6 +60,9 @@ yarn-debug.log*
 .yardoc
 /doc/*
 
+# Ignore binary for launchy
+/bin/launchy
+
 # Ignore tags
 tags
 
