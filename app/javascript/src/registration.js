@@ -148,7 +148,7 @@ function checksumDNI(dni_number) {
     'C',
     'K',
     'E',
-    'T',
+    'T'
   ];
 
   if (
@@ -202,6 +202,14 @@ function validatesRegistration() {
 }
 
 document.addEventListener('turbolinks:load', () => {
-  const rgx = /\/..\/members\/new/;
-  if (rgx.test(document.URL)) validatesRegistration();
+  const actualPath = window.location.pathname;
+  const registrationPathRegex = /\/(?:en|es)\/members\/new/;
+  const newMemberPathRegex = /\/(?:en|es)\/member_admin\/new/;
+
+  if (
+    registrationPathRegex.test(actualPath) ||
+    newMemberPathRegex.test(actualPath)
+  ) {
+    validatesRegistration();
+  }
 });

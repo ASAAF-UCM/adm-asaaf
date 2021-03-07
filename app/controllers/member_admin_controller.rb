@@ -6,9 +6,22 @@ class MemberAdminController < ApplicationController
     redirect_to root_path unless member_allowed? %w[admin accounting secretary loans]
   end
 
-  def new; end
+  respond_to :html
 
-  def create; end
+  def new
+    @member = Member.new
+    render 'new'
+  end
+
+  def create
+    @member = Member.new(create_params)
+    if @member.save
+      flash[:success] = t_scoped 'success'
+      redirect_to member_admin_path(@member.id)
+    else
+      respond_with @member
+    end
+  end
 
   def update
     @member = Member.find(params[:id])
@@ -86,5 +99,24 @@ def index
               :id_document_type_id,
               :id_document_expiration_date,
               :moodle_name)
+  end
+
+  def create_params
+    params
+      .require(:member)
+      .permit(:name,
+              :surname1,
+              :surname2,
+              :email,
+              :birthdate,
+              :id_document_number,
+              :id_documennt_type_id,
+              :id_document_expiration_date,
+              :moodle_name,
+              :password,
+              :password_confirmation,
+              :id_document_type_id,
+              :image
+             )
   end
 end

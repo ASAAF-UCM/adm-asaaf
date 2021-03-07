@@ -8,6 +8,7 @@ es:
       index:
         title: Panel de administración
         members: Socios
+        new_member: Crear usuario
       show:
         member_number: Número de socio
         no_member: No es socio
@@ -47,3 +48,9 @@ es:
           Si entiendes las consecuencias de esta acción, introduce el 
           nombre de la persona en el siguiente campo
         drop_down_member_modal_submit: Dar de baja
+      new:
+        title: Crear nuevo usuario
+        description: >-
+          Estás a punto de crear una nueva cuenta de usuario en la aplicación.
+          Se le mandará una notificación por email, pero aún no se convertirá
+          en socio.

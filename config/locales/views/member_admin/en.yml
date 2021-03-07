@@ -8,6 +8,7 @@ en:
       index:
         title: Admin dashboard
         members: Members
+        new_member: Create user
       show:
         member_number: Member number
         no_member: Not a member
@@ -46,3 +47,8 @@ en:
           If you understand the consecuences of this action,
           write down the name of the person in the next field
         drop_down_member_modal_submit: Drop down
+      new:
+        title: Create new user
+        description: >-
+          You're about to create a new user account in the application. The user
+          will be notified by email, but they won't yet became a member.

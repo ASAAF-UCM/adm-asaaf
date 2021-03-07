@@ -2,6 +2,14 @@
 
 <h3> <%= t_scoped :members %></h3>
 
+<div class="new_member_admin_buttons">
+  <%= link_to t_scoped(:new_member),
+        new_member_admin_path,
+        method: :get,
+        class: 'btn btn-primary'
+  %>
+</div>
+
 <table class="table">
   <thead>
     <th scope='col'> <%= t_scoped :member_number %></th>
