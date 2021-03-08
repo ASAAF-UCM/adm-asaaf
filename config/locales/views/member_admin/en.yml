@@ -10,6 +10,10 @@ en:
         members: Members
         not_members: Not members
         new_member: Create user
+        member_number: Member number
+        email: Email
+        name: Name
+        surnames: Surnames
       show:
         member_number: Member number
         no_member: Not a member

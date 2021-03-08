@@ -10,6 +10,10 @@ es:
         members: Socios
         not_members: No socios
         new_member: Crear usuario
+        member_number: Número de socio
+        email: Email
+        name: Nombre
+        surnames: Apellidos
       show:
         member_number: Número de socio
         no_member: No es socio
