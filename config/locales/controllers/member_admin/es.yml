@@ -9,4 +9,6 @@ es:
         password_instructions_sent: Las instrucciones para cambiar la contraseña de la cuenta han sido mandadas.
       update:
         success: El usuario ha sido actualizado con éxito
+      honorario:
+        success: El socio ha sido convertido en honorario
 

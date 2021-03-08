@@ -85,6 +85,13 @@ def index
     redirect_to member_admin_path(id: @member.id)
   end
 
+  def honorario
+    @member = Member.find(params[:id])
+    @member.update_attribute :member_type_id, '2'
+    flash[:success] = t_scoped :success
+    redirect_to member_admin_path(id: @member.id)
+  end
+
   private
 
   def update_params

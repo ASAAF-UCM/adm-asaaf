@@ -9,3 +9,5 @@ en:
         password_instructions_sent: The instructions to change the password were sent.
       update:
         success: User was updated succesfully
+      honorario:
+        success: Member became "honorario"

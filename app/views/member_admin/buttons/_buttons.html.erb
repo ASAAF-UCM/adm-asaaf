@@ -26,5 +26,12 @@
             <%= t_scoped :drop_down_member %>
     </button>
   <% end %>
+  <% if @member.member_type_id == 3 %>
+    <%= link_to t_scoped(:convert_to_honorario),
+      honorario_path(id: @member.id),
+      method: :post,
+      class: 'btn btn-warning'
+%>
+  <% end %>
 </div>
 <% end %>

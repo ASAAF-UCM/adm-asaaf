@@ -39,6 +39,7 @@ es:
           send_password_recovery_email: Enviar email de recuperación de contraseña
           lock_account: Bloquear cuenta
           edit_member_data: Editar datos del socio
+          convert_to_honorario: Convertir en socio honorario
       dropdownmodal:
         drop_down_member_modal_title: Vas a dar de baja una persona
         drop_down_member_modal_text: >-

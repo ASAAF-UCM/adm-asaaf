@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       post 'send_reset_password_instructions', to: 'member_admin#reset_email'
       post 'unlock_account', to: 'member_admin#unlock_account'
       post 'lock_account', to: 'member_admin#lock_account'
+      post 'honorario', to: 'member_admin#honorario'
     end
 
     resources :role, only: %i[index new create destroy update]

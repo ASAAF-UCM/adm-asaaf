@@ -37,6 +37,7 @@ en:
           drop_down_member: Drop down member
           edit_member_data: Edit member data
           send_password_recovery_email: Send password email recovery
+          convert_to_honorario: Convert in "honorario" member
         lock_account: Lock account
       dropdownmodal:
         drop_down_member_modal_title: You're about to drop out a member
