@@ -8,6 +8,7 @@ en:
       index:
         title: Admin dashboard
         members: Members
+        not_members: Not members
         new_member: Create user
       show:
         member_number: Member number

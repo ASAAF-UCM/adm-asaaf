@@ -8,6 +8,7 @@ es:
       index:
         title: Panel de administración
         members: Socios
+        not_members: No socios
         new_member: Crear usuario
       show:
         member_number: Número de socio
