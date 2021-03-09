@@ -1,3 +1,5 @@
+import Rails from '@rails/ujs';
+
 class MemberAdminPaginator {
   constructor(members_per_page = 50) {
     this.members = document.getElementsByClassName('admin_members_table_row');
@@ -118,8 +120,93 @@ class MemberAdminPaginator {
   }
 }
 
+class MemberAdminSearch {
+  constructor() {
+    this.members;
+    this.tableElem = document.getElementById('search-result-table');
+    this.tableBodyElem = document.getElementById('search-result-body');
+    this.language = window.location.pathname.split('/')[1];
+
+    const searchForm = document.getElementById('member_search_form');
+    const formField = document.getElementById('member_search');
+
+    formField.addEventListener(
+      'input',
+      function (e) {
+        e.preventDefault();
+        if (
+          formField.value.length > 2 ||
+          (isFinite(Number(formField.value)) && formField.value != '')
+        ) {
+          Rails.fire(searchForm, 'submit');
+        } else {
+          this._clearTable();
+        }
+      }.bind(this)
+    );
+
+    searchForm.addEventListener('ajax:before', this._waitingSpinner.bind(this));
+
+    searchForm.addEventListener('ajax:success', (ev) => {
+      this.tableElem.classList.remove('hidden');
+      this.members = ev.detail[0]; // Object with the member data
+      this._renderResponse();
+    });
+  }
+
+  _waitingSpinner() {
+    this.tableElem.classList.remove('hidden');
+    this.tableBodyElem.innerHTML = `
+      <tr id="spinner-tr">
+        <td colspan="4"class="spinner-border" id="spinner" role="status">
+          <span class="visually-hidden">Loading...</span> 
+        </td>
+      </tr>
+    `;
+  }
+
+  _clearTable() {
+    this.tableBodyElem.innerHTML = '';
+  }
+
+  _renderResponse() {
+    let html = '';
+
+    if (this.members == 0) {
+      this.tableBodyElem.innerHTML = 'No results';
+      return;
+    }
+
+    this.members.forEach((member) => {
+      let member_number;
+
+      if (member.member_number == undefined) {
+        member_number = '---';
+      } else {
+        member_number = member.member_number;
+      }
+
+      html += `
+      <tr>
+        <th scope="row">
+          <a href="/${this.language}/member_admin/${member.id}">
+            ${member_number}
+          </a>
+        </th>
+        <td>${member.email}</td>
+        <td>${member.name}</td>
+        <td>${member.surname1} ${member.surname2}</td>
+      </tr>
+      `;
+    });
+
+    this.tableBodyElem.innerHTML = html;
+  }
+}
+
 document.addEventListener('turbolinks:load', function () {
   if (window.location.pathname.split('/').slice(2)[0] == 'member_admin') {
     const map = new MemberAdminPaginator(50);
+    const mas = new MemberAdminSearch();
   }
 });

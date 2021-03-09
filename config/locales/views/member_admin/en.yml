@@ -14,6 +14,7 @@ en:
         email: Email
         name: Name
         surnames: Surnames
+        search: Search
       show:
         member_number: Member number
         no_member: Not a member

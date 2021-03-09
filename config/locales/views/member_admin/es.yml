@@ -14,6 +14,7 @@ es:
         email: Email
         name: Nombre
         surnames: Apellidos
+        search: Buscar socio
       show:
         member_number: Número de socio
         no_member: No es socio
