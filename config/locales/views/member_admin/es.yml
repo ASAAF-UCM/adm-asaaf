@@ -46,6 +46,17 @@ es:
           lock_account: Bloquear cuenta
           edit_member_data: Editar datos del socio
           convert_to_honorario: Convertir en socio honorario
+        make_member:
+          convert_into_member: Convertir en socio
+      convertintomembermodal:
+        convert_into_member_modal_title: Vas a convertir en socio a una persona
+        convert_into_member_modal_text: >-
+          Estás a punto de convertir a una persona en socio de la asociación.
+          El número de socio se le asignará automáticamente.
+        convert_into_member_modal_instructions: >-
+          Si entiendes las consecuencias de esta acción, introduce el nombre de
+          la persona en el siguiente campo
+        convert_into_member_modal_submit: Convertir en socio
       dropdownmodal:
         drop_down_member_modal_title: Vas a dar de baja una persona
         drop_down_member_modal_text: >-

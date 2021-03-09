@@ -1,6 +1,9 @@
 es:
   controllers:
     member_admin:
+      convert_into_member:
+        success: ¡ASAAF ahora tiene una persona con número de socio %{number}!
+        error: Sucedió un error
       unlock_account:
         account_was_unlocked: La cuenta se ha desbloqueado.
       lock_account:

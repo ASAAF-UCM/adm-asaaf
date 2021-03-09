@@ -45,6 +45,17 @@ en:
           send_password_recovery_email: Send password email recovery
           convert_to_honorario: Convert in "honorario" member
         lock_account: Lock account
+        make_member:
+          convert_into_member: Convert into member
+      convertintomembermodal:
+        convert_into_member_modal_title: You are about to convert a person in member
+        convert_into_member_modal_text: >-
+          You're about to convert a person into member of the association.
+          The member number will be asigned automatically.
+        convert_into_member_modal_instructions: >-
+          If you understand the consecuences of this action,
+          write down the name of the person in the next field
+        convert_into_member_modal_submit: Convert into member
       dropdownmodal:
         drop_down_member_modal_title: You're about to drop out a member
         drop_down_member_modal_text: >-

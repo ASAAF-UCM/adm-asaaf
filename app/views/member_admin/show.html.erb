@@ -137,7 +137,7 @@
       <%= t_scoped :member_since %>
     </td>
     <td>
-      <%= member_since @member%>
+      <%= render 'member_admin/buttons/make_member' %>
     </td>
   </tr>
 </table>
@@ -147,3 +147,4 @@
 </div>
 
 <%= render 'member_admin/dropdownmodal' %>
+<%= render 'member_admin/convertintomembermodal' %>

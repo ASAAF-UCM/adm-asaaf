@@ -113,6 +113,17 @@ def index
                                         ])
   end
 
+  def convert_into_member
+    @member = Member.find(params[:id])
+
+    if @member.convert_into_member
+      flash[:success] = t_scoped :success, number: @member.member_number
+    else
+      flash[:alert] = t_scoped :errors
+    end
+  redirect_to member_admin_path(id: @member.id)
+  end
+
   private
 
   def update_params

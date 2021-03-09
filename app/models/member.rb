@@ -79,4 +79,16 @@ class Member < ApplicationRecord
       .where(member_id: self.id, is_active: true)
       .pluck(:role_name)
   end
+
+  def convert_into_member
+    return false unless self.member_number.nil?
+    return false unless self.member_type_id.nil?
+
+    self.member_type_id = 3
+    self.member_number = Member.maximum(:member_number) + 1
+    self.member_since = Date.today
+    self.last_active_member_confirmation = Date.today
+
+    save
+  end
 end

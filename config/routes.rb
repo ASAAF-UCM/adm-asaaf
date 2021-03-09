@@ -23,7 +23,8 @@ Rails.application.routes.draw do
       post 'unlock_account', to: 'member_admin#unlock_account'
       post 'lock_account', to: 'member_admin#lock_account'
       post 'honorario', to: 'member_admin#honorario'
-      post  'search', to: 'member_admin#member_search', as: 'member_search'
+      post 'search', to: 'member_admin#member_search', as: 'member_search'
+      post 'convert_into', to: 'member_admin#convert_into_member', as: 'convert_into_member'
     end
 
     resources :role, only: %i[index new create destroy update]

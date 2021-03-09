@@ -1,0 +1,12 @@
+<% if @member.member_since.nil? %>
+<button type="button"
+        class="btn btn-primary btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#convertIntoMemberModal"
+        >
+        <%= t_scoped :convert_into_member %>
+</button>
+
+<% else %>
+  <%= @member.member_since %>
+<% end %>
