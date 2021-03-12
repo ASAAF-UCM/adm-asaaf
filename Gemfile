@@ -7,14 +7,13 @@ ruby '2.7.2'
 
 # Rails instalation gems
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'jbuilder', '~> 2.11'
 gem 'jquery-rails'
 gem 'pg'
 gem 'puma', '~> 5.2'
 gem 'rails', '~> 6.1.3'
-gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
+gem 'tzinfo-data'
 gem 'webpacker', '~> 5.2'
 
 # Gems needed for the app, outside rails
