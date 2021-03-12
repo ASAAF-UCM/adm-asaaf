@@ -13,16 +13,42 @@ En el futuro, la intención es añadir las siguientes funciones:
 
 ## Comenzando
 
-Estas instrucciones resumen lo que es necesario para desplegar la aplicación, así como para testearla.
-
+Estas instrucciones incluyen cómo construir la imagen para servir la web desde
+un contenedor usando docker-compose.
 
 ### Prerrequisitos
 
-Debido a que la aplicación se sirve desde un contenedor de Docker, es completamente necesario tener instalado lo siguiente:
- * Docker Engine
- * Docker Compose
- * Docker Registry
- * Un servidor web, como nginx
+Para poder generar la imagen, se necesita disponer de una variable de entorno
+llamada `RAILS_MASTER_KEY`. Es necesaria porque en el ensamblado del contenedor,
+webpacker la utiliza, ya que necesita acceder a la `secret_key_base`, que se
+encuentra almacenada en `config/credentials/production.yml.enc`.
+
+Esto quiere decir que con anterioridad, necesitamos generar una clave, que puede
+generarse usando el siguiente comando:
+
+```bash
+bundle exec rails secret
+```
+
+Lo que nos devuelva ese comando deberemos guardarlo y a continuación guardarlo
+encriptado para el entorno de producción, lo cual se hace con el siguiente
+comando:
+
+```bash
+bundle exec rails credentials:edit --environment production
+```
+
+El fichero a editar sigue el formato yml. Bastará con añadir lo siguiente:
+
+```yml
+secret_key_base: <Cadena que hayamos copiado>
+```
+
+Una vez hecho esto, pasamos a generar la imagen:
+
+```bash
+docker build -t adm_asaaf .
+```
 
 ### Instalación
 
@@ -41,18 +67,17 @@ Tras esto, abrimos con un navegador web `doc/index.html`.
 
 ### Tests
 
-Para realizar los tests se utiliza rspec.
+Para realizar los tests se utiliza rspec. Para comprobar que todo funciona
+correctamente, ejecutamos el siguiente comando:
+
+```bash
+bundle exec rspec
+```
 
 ### Despliegue
 
-El despliegue del código sucede cuando se hace un merge en master. El procedimiento es el siguiente:
-
- 1. Crea una rama
- 2. Implementa las funciones deseadas en esa rama
- 3. Haz un push con la rama.
- 4. Haz un pull request para hacer un merge de tu rama con master.
-
-Tras esto, correrán las pruebas y, si todo sale bien, se mergearán las ramas y se actualizará automáticamente la web.
+Cada vez que se hace un merge a master, se crea una imagen de docker que se
+almacena en el ECR.
 
 ## Hecho con
 
