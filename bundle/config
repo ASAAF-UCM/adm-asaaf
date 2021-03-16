@@ -1,0 +1,4 @@
+---
+BUNDLE_SET: "without development test staging"
+BUNDLE_DEPLOYMENT: "true"
+BUNDLE_PATH: "vendor/bundle"

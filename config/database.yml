@@ -26,4 +26,5 @@ production:
   <<: *default
   database: adm_asaaf
   username: adm_asaaf
-  password: <%= Rails.application.credentials.dig Rails.env.to_sym, :postgres, :password %>
+  url: <%= ENV['DATABASE_URL'] %>
+  password: <% ENV['DATABASE_PASSWORD'] %>
