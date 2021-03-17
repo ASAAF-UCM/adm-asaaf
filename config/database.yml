@@ -26,5 +26,5 @@ production:
   <<: *default
   database: adm_asaaf
   username: adm_asaaf
-  url: <%= ENV['DATABASE_URL'] %>
-  password: <% ENV['DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRES_URL'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>

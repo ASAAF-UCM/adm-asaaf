@@ -50,9 +50,34 @@ Una vez hecho esto, pasamos a generar la imagen:
 docker build -t adm_asaaf .
 ```
 
+Una vez generada la imagen correspondiente, tendremos que crear un archivo
+`db-passwd.env`, que guarda la variable de entorno que se usa para asignar la
+contraseña de la basea de datos. Finalmente, ejecutamos el siguiente comando:
+
+```bash
+docker-compose up -d
+```
+
+Con esto, tendremos disponible la aplicación a través del puerto 3000 de la
+máquina donde lo hayamos desplegado.
+
 ### Instalación
 
-A continuación se muestran los distintos pasos necesarios para instalar la aplicación.
+La instalación a realizar consiste en generar la base de datos con sus tablas
+correspondientes y poblarlas. En primer lugar, accedemos al contenedor de la
+web. Para ello, ejecutamos en la carpeta donde esté el `docker-compose.yml` que
+hayamos usado el comando:
+
+```bash
+docker-compose dcr bash
+```
+
+Una vez dentro del contenedor, ejecutamos los dos siguientes comandos:
+
+```bash
+bundle exec rails db:migrate
+bundle exec rails db:seed
+```
 
 ### Documentación
 
@@ -79,6 +104,8 @@ bundle exec rspec
 Cada vez que se hace un merge a master, se crea una imagen de docker que se
 almacena en el ECR.
 
+*Se completará conforme se vayan realizando los distintos pasos* 
+
 ## Hecho con
 
 * [Rails](https://rubyonrails.org/)
@@ -91,6 +118,7 @@ almacena en el ECR.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENCE.md](LICENCE.md) file for details
+Este proyecto está licenciado a través de la licencia MTI - el archivo
+[LICENCE.md](LICENCE.md) contiene más detalles al respecto.
 
 ## Agradecimientos
