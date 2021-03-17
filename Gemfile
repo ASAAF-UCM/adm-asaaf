@@ -27,12 +27,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'i18n-tasks'
   gem 'rails-controller-testing'
-<<<<<<< ours
-  gem 'rspec'
-  gem 'rspec-rails', '~> 4.0.2'
-=======
   gem 'rspec-rails', '~> 5.0.0'
->>>>>>> theirs
   gem 'shoulda-matchers'
   gem 'with_model'
 end
