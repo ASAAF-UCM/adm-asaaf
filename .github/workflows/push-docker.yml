@@ -1,8 +1,8 @@
 name: Push to ECR
 on:
   push:
-    branches:
-      - master
+    tags:
+      - '*'
 
 jobs:
   ECR:
@@ -19,5 +19,5 @@ jobs:
           account_id: ${{ secrets.AWS_ACCOUNT_ID }}
           repo: admasaaf
           region: eu-west-3
-          tags: latest,${{ github.sha }}
-          extra_build_args: -t ${{ secrets.AWS_ACCOUN_ID }}dkr.ecr.eu-west-3.amazonaws.com/admasaaf:latest
+          tags: latest,${{ github.event.release.tag_name }}
+          extra_build_args: -t ${{ secrets.AWS_ACCOUNT_ID }}dkr.ecr.eu-west-3.amazonaws.com/admasaaf:latest
