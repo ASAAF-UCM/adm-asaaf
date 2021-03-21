@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controller for manage the user profile
 class ProfileController < ApplicationController
   before_action :authenticate_member!
 

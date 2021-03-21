@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
   helper_method :get_user_roles
   helper_method :member_allowed?
 
+  # Get the active roles for a given member
+  #
+  # @param member [Member]
+  # @returns [Array] The active roles of the member
   def get_user_roles(member)
     RoleAllocation
       .joins(:member, :role_type)
@@ -14,6 +18,10 @@ class ApplicationController < ActionController::Base
       .pluck(:role_name)
   end
 
+  # Check if current_member is allowed to make this controller action
+  #
+  # @param roles [Array] Array with a string for each accepted role
+  # @return [true, flase]
   def member_allowed?(roles)
     if member_signed_in?
       current_member.roles.each do |member_role|

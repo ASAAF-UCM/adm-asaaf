@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controller for manage the roles assigned to a user.
 class RoleController < ApplicationController
   before_action :authenticate_member!
   before_action do

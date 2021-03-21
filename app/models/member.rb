@@ -2,7 +2,7 @@
 
 # This class is a model arond a devise user. Instead of calling the user of the
 # web user, we have selected instead the name member, in order to reflect that
-# all the people who will use this app are members of ASAAF.
+# all the people who will use this app are (or will be) members of ASAAF.
 class Member < ApplicationRecord
   has_many :role_allocations, dependent: :destroy
 
@@ -25,7 +25,11 @@ class Member < ApplicationRecord
             earlier_than_tomorrow: true
 
   include ImageUploader::Attachment(:image)
-
+  
+  # Updates the password of the member.
+  # @param update_params [Hash] (See ProfileController#update_params)
+  #
+  # @return [Member, false] if save fails
   def update_password(update_params)
     return false if update_params[:password] != update_params[:password_confirmation]
 
@@ -33,6 +37,17 @@ class Member < ApplicationRecord
     save(skip_for_profile: true)
   end
 
+  # Drop_out a member of the association (dar de baja). This method anonymizes
+  # an entry in the database in order to make clear that a member is not anymore
+  # a member of the association.
+  #
+  # Can't be used on the same user that requests the drop out, nor on a user
+  # with a role.
+  #
+  # @param params [hash] 
+  # @option params [Member] :requested_by The user who requested the drop_out
+  #
+  # @return [Member, false] Member if OK, false if drop_out fails
   def drop_out(params = nil)
     # We don't want to remove the actual user
     unless params.nil?
@@ -73,6 +88,8 @@ class Member < ApplicationRecord
     update_attribute :unlock_token, nil
   end
 
+  # The roles which the member has assigned and active
+  # @return [Array] with the name of the different roles
   def roles
     RoleAllocation
       .joins(:member, :role_type)
@@ -80,6 +97,10 @@ class Member < ApplicationRecord
       .pluck(:role_name)
   end
 
+  # Convert a person in a member of the association by assigning the correct
+  # member_type_id and a member_number.
+  #
+  # @return [Member, false] Member if all OK, false if fails
   def convert_into_member
     return false unless self.member_number.nil?
     return false unless self.member_type_id.nil?

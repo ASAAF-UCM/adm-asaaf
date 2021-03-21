@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+
+# Controller for the member administration dashboard.
 class MemberAdminController < ApplicationController
   before_action :authenticate_member!
   before_action do
@@ -49,7 +51,7 @@ class MemberAdminController < ApplicationController
     end
   end
 
-def index
+  def index
     @members = Member.where.not(member_number: [nil, 0]).order(member_number: :asc)
     @not_members = Member.where(member_number: nil).order(created_at: :asc)
   end
