@@ -4,7 +4,7 @@
   IdDocumentType.find_or_create_by name: id_type
 end
 
-%w[Fundador Honorario Numerario].each do |member_type|
+%w[Fundador Honorario Numerario No\ Socio].each do |member_type|
   MemberType.find_or_create_by name: member_type
 end
 

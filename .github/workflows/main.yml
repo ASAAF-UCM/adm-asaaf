@@ -24,7 +24,7 @@ jobs:
       - name: Set up ruby version used
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.0
+          ruby-version: 2.7.2
       - name: Set up node
         uses: actions/setup-node@v1
         with:
@@ -38,7 +38,7 @@ jobs:
 
       - name: Setup the app
         run: |
-          bundle exec rake db:create db:schema:load yarn:install
+          bundle exec rake db:create db:schema:load db:seed yarn:install
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres

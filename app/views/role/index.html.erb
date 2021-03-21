@@ -14,8 +14,11 @@
     <% @role_allocations.each do |role| %>
       <tr>
         <th scope="row"><%= role.id %></th>
-        <td><%= role.member.name %></td>
-        <td><%= t 'models.role.names.' + role.role_type.role_name %></td>
+        <td>
+          <%= link_to "#{role.name} #{role.surname1} #{role.surname2}",
+            member_admin_path(role.member_id) %>
+        </td>
+        <td><%= t 'models.role.names.' + role.role_name %></td>
         <td class="center">
           <%= link_to role_path(role), method: :patch do %>
             <% if role.is_active %>

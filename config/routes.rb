@@ -15,7 +15,17 @@ Rails.application.routes.draw do
       put 'password/edit', to: 'profile#update_password'
     end
 
-    resources :member_administration
+    resources :member_admin
+
+    scope :member_admin do
+      post 'confirm_email', to: 'member_admin#confirm_email'
+      post 'send_reset_password_instructions', to: 'member_admin#reset_email'
+      post 'unlock_account', to: 'member_admin#unlock_account'
+      post 'lock_account', to: 'member_admin#lock_account'
+      post 'honorario', to: 'member_admin#honorario'
+      post 'search', to: 'member_admin#member_search', as: 'member_search'
+      post 'convert_into', to: 'member_admin#convert_into_member', as: 'convert_into_member'
+    end
 
     resources :role, only: %i[index new create destroy update]
   end

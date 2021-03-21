@@ -7,18 +7,24 @@ class ApplicationController < ActionController::Base
   helper_method :get_user_roles
   helper_method :member_allowed?
 
+  # Get the active roles for a given member
+  #
+  # @param member [Member]
+  # @returns [Array] The active roles of the member
   def get_user_roles(member)
-    roles = []
-    member.role_allocation_ids.each do |role_allocation|
-      roles.append RoleType.find(RoleAllocation.find(role_allocation)\
-                                 .role_type_id).role_name
-    end
-    roles
+    RoleAllocation
+      .joins(:member, :role_type)
+      .where(member_id: member.id, is_active: true)
+      .pluck(:role_name)
   end
 
+  # Check if current_member is allowed to make this controller action
+  #
+  # @param roles [Array] Array with a string for each accepted role
+  # @return [true, flase]
   def member_allowed?(roles)
     if member_signed_in?
-      get_user_roles(current_member).each do |member_role|
+      current_member.roles.each do |member_role|
         return true if member_role.in? roles
       end
     end
@@ -48,7 +54,7 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
-  def default_url_options
-    { locale: I18n.locale }
+  def default_url_options(options = {})
+    options.merge({ locale: I18n.locale })
   end
 end

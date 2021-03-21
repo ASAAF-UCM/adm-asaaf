@@ -1,0 +1,150 @@
+<div>
+<h1><%= MemberController.helpers.full_name(@member) %>
+</h1>
+
+<%= render 'member_admin/badges/badges' %>
+
+
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :name %>
+  </p>
+  <p class="field_value">
+    <%= @member.name %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :surname1 %>
+  </p>
+  <p class="field_value">
+    <%= @member.surname1 %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :surname2 %>
+  </p>
+  <p class="field_value">
+    <%= @member.surname2 %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :moodle_name %>
+  </p>
+  <p class="field_value">
+    <%= @member.moodle_name %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :email %>
+  </p>
+  <p class="field_value">
+    <%= @member.email %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :id_document %>
+  </p>
+  <p class="field_value">
+  <%= IdDocumentType.find(@member.id_document_type_id).name %>
+    <%= @member.id_document_number %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :birthdate %>
+  </p>
+  <p class="field_value">
+  <%= @member.birthdate %>
+  </p>
+</div>
+<div class="profile_field">
+  <p class="field_name">
+    <%= t_scoped :active_member_last_time %>
+  </p>
+  <p class="field_value">
+  <%= @member.last_active_member_confirmation %>
+  <% unless @member.last_active_member_confirmation.nil? %>
+    (
+    <%= distance_of_time_in_words Date.today, @member.last_active_member_confirmation %>
+    )
+  <% end %>
+
+
+</div>
+
+<div class="member_admin_account_data">
+<h2>
+  <%= t_scoped :account_data %>
+</h2>
+
+<table class='table'>
+  <% if @member.access_locked? %>
+  <tr>
+    <td>
+      <%= t_scoped :account_locked_on %>
+    </td>
+    <td>
+      <%= @member.locked_at %>
+      <%= link_to t_scoped(:unlock_account),
+      unlock_account_path(id: @member.id),
+      method: :post,
+      class: 'btn btn-primary btn-sm',
+      id: 'unlock_account_button'
+    %>
+    </td>
+  </tr>
+
+  <% end %>
+  <tr>
+    <td>
+      <%= t_scoped :last_login_time %>
+    </td>
+    <td>
+      <%= sign_in_time @member %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t_scoped :last_login_ip %>
+    </td>
+    <td>
+      <%= sign_in_ip @member %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t_scoped :email_confirmed_at %>
+    </td>
+    <td>
+      <%= email_confirmed_at @member %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t_scoped :account_created_on %>
+    </td>
+    <td>
+      <%= @member.created_at %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t_scoped :member_since %>
+    </td>
+    <td>
+      <%= render 'member_admin/buttons/make_member' %>
+    </td>
+  </tr>
+</table>
+
+<%= render 'member_admin/buttons/buttons' %>
+</div>
+</div>
+
+<%= render 'member_admin/dropdownmodal' %>
+<%= render 'member_admin/convertintomembermodal' %>

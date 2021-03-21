@@ -1,12 +1,23 @@
 # frozen_string_literal: true
 
+# Controller for manage the roles assigned to a user.
 class RoleController < ApplicationController
   before_action :authenticate_member!
   before_action do
     redirect_to root_path unless member_allowed? ['admin']
   end
   def index
-    @role_allocations = RoleAllocation.all
+    @role_allocations = RoleAllocation
+                          .joins(:member, :role_type)
+                          .select(
+                            :id,
+                            :member_id,
+                            :name,
+                            :surname1,
+                            :surname2,
+                            :role_name,
+                            :is_active
+                          )
   end
 
   def new

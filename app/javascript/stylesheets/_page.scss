@@ -2,7 +2,7 @@ body.homepage {
   font-family: 'Ubuntu', sans-serif;
   color: white;
   background: {
-    image: asset-url('bg.jpg');
+    image: url('~images/bg.jpg');
     size: cover;
     attachment: fixed;
   }

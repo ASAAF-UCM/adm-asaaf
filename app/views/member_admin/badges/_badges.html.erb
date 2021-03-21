@@ -1,0 +1,11 @@
+<div class="badges">
+  <% if @member.member_number.nil? %>
+    <%= render 'member_admin/badges/nomember' %> 
+  <% elsif @member.member_number.zero? %>
+    <%= render 'member_admin/badges/droppeddown' %>
+  <% else %>
+    <%= render 'member_admin/badges/membertype' %>
+    <%= render 'member_admin/badges/roles' %>
+    <%= render 'member_admin/badges/warnings' %>
+  <% end %>
+</div>

@@ -1,0 +1,72 @@
+en:
+  views:
+    member_admin:
+      edit:
+        title_member: Edit data from member
+        title_no_member: Edit data from non-member
+        submit: Update data
+      index:
+        title: Admin dashboard
+        members: Members
+        not_members: Not members
+        new_member: Create user
+        member_number: Member number
+        email: Email
+        name: Name
+        surnames: Surnames
+        search: Search
+      show:
+        member_number: Member number
+        no_member: Not a member
+        account_locked: Account locked
+        account_locked_on: Account locked on
+        unlock_account: Unlock
+        name: Name
+        surname1: First surname
+        surname2: Second surname
+        moodle_name: Moodle name
+        email: Email
+        id_document: Id document
+        id_expired: Id document expired
+        confirm_email: Confirm email
+        account_data: Account data
+        last_login_time: Last login time
+        did_not_sign_in: Has not signed in
+        last_login_ip: Last login IP
+        email_confirmed_at: Email confirmed at
+        account_created_on: Account created on
+        member_since: Member since
+        active_member_last_time: Last confirmation as active member
+        Birthdate: Birhdate
+      buttons:
+        buttons:
+          drop_down_member: Drop down member
+          edit_member_data: Edit member data
+          send_password_recovery_email: Send password email recovery
+          convert_to_honorario: Convert in "honorario" member
+        lock_account: Lock account
+        make_member:
+          convert_into_member: Convert into member
+      convertintomembermodal:
+        convert_into_member_modal_title: You are about to convert a person in member
+        convert_into_member_modal_text: >-
+          You're about to convert a person into member of the association.
+          The member number will be asigned automatically.
+        convert_into_member_modal_instructions: >-
+          If you understand the consecuences of this action,
+          write down the name of the person in the next field
+        convert_into_member_modal_submit: Convert into member
+      dropdownmodal:
+        drop_down_member_modal_title: You're about to drop out a member
+        drop_down_member_modal_text: >-
+          You're about to remove the data of this person from the database.
+          This action is irreversible.
+        drop_down_member_modal_instructions: >-
+          If you understand the consecuences of this action,
+          write down the name of the person in the next field
+        drop_down_member_modal_submit: Drop down
+      new:
+        title: Create new user
+        description: >-
+          You're about to create a new user account in the application. The user
+          will be notified by email, but they won't yet became a member.

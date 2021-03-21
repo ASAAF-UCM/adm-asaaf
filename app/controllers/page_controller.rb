@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controller for managing static pages of the app
 class PageController < ApplicationController
   def home
     @home_page = true

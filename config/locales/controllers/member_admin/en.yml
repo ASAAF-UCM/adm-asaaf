@@ -1,0 +1,16 @@
+en:
+  controllers:
+    member_admin:
+      convert_into_member:
+        success: ASAAF has now a person with %{number} as member number!
+        error: An error happened
+      unlock_account:
+        account_was_unlocked: Account was unlocked.
+      lock_account:
+        account_was_locked: Account was locked.
+      reset_email:
+        password_instructions_sent: The instructions to change the password were sent.
+      update:
+        success: User was updated succesfully
+      honorario:
+        success: Member became "honorario"

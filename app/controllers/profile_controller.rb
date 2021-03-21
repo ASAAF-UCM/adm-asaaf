@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controller for manage the user profile
 class ProfileController < ApplicationController
   before_action :authenticate_member!
 
@@ -17,7 +18,7 @@ class ProfileController < ApplicationController
 
   def update_password
     @member = current_member
-    if @member.update(update_params)
+    if @member.update_password(update_params)
       bypass_sign_in(@member)
       redirect_to profile_path
       flash[:success] = t_scoped 'success'

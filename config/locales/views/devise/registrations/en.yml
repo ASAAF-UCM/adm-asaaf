@@ -6,6 +6,7 @@ en:
         id_document_expiration_date: Expiration date of ID document
         id_document_number: ID document number
         id_document_type_id: ID document type
+        image_data: Image of the ID document
         moodle_name: Name in moodle (if you are a student of the faculty of physics)
         name: Name
         password: Password

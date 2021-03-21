@@ -1,0 +1,10 @@
+<% if MemberController.helpers.id_expired? @member %>
+  <span class="badge bg-danger">
+    <%= t_scoped :id_expired %>
+  </span>
+<% end %>
+<% if @member.access_locked? %>
+  <span class="badge bg-danger">
+    <%= t_scoped :account_locked %>
+  </span>
+<% end %>
