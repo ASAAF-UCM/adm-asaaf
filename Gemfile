@@ -19,7 +19,7 @@ gem 'webpacker', '~> 5.2'
 # Gems needed for the app, outside rails
 gem 'browser'
 gem 'devise', '~> 4.7.1'
-gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+gem 'mimemagic'
 gem 'i18n_lazy_scope'
 gem 'image_processing', '~> 1.12'
 gem 'shrine', '~> 3.3.0'
