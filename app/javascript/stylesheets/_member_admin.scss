@@ -2,6 +2,10 @@
   margin: 0 auto;
 }
 
+.pagination {
+  justify-content: center;
+}
+
 .page-link--active {
   background-color: darkslategrey !important;
   color: white !important;

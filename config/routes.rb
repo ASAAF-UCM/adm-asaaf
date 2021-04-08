@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       post 'honorario', to: 'member_admin#honorario'
       post 'search', to: 'member_admin#member_search', as: 'member_search'
       post 'convert_into', to: 'member_admin#convert_into_member', as: 'convert_into_member'
+      post 'page', to: 'member_admin#member_page', as: 'page'
     end
 
     resources :role, only: %i[index new create destroy update]

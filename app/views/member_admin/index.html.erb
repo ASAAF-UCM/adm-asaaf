@@ -54,7 +54,7 @@
     >
     <button class="nav-link"
             data-bs-toggle="tab"
-            data-bs-target="#non-members-table"
+            data-bs-target="#not-members-table"
             type="button"
             aria-controls="<%= t_scoped :not_members %>"
             aria-selected="false"
@@ -75,25 +75,15 @@
           <th scope='col'> <%= t_scoped :surnames %></th>
         </thead>
         <tbody class='admin_members_table_body'>
-          <% @members.each_with_index do |member, idx| %>
-            <tr class='admin_members_table_row' id=<%= idx %>>
-              <th scope="row">
-                <%= link_to member.member_number, member_admin_path(member.id) %>
-              </th>
-              <td> <%= member.email %></td>
-              <td> <%= member.name %></td>
-              <td> <%= member.surname1 + ' ' + member.surname2 %></td>
-            </tr>
-          <% end %>
         </tbody>
       </table>
 
       <nav class='member_navigation' aria-label='Member navigation'>
-        <ul class="pagination">
+        <ul class='pagination pagination--members'>
         </ul>
       </nav>
     </div>
-    <div class="tab-pane fade" id="non-members-table" aria-labelledby="">
+    <div class="tab-pane fade" id="not-members-table" aria-labelledby="">
       <h2> <%= t_scoped :not_members %></h2>
 
       <table class="table" id="not-member-table">
@@ -102,17 +92,17 @@
           <th scope='col'> <%= t_scoped :name %></th>
           <th scope='col'> <%= t_scoped :surnames %></th>
         </thead>
-        <tbody class='admin_members_table_body'>
-          <% @not_members.each_with_index do |user, idx| %>
-            <tr class='admin_not_members_table_row' id=<%= idx %>>
-              <th scope="row"> <%= link_to user.email, member_admin_path(user.id) %></th>
-              <td> <%= user.name %></td>
-              <td> <%= user.surname1 + ' ' + user.surname2 %></td>
-            </tr>
-          <% end %>
+        <tbody class='admin_not_members_table_body'>
         </tbody>
       </table>
+      <nav class='member_navigation' aria-label='Member navigation'>
+        <ul class='pagination pagination--notMembers'>
+        </ul>
+      </nav>
     </div>
   </div>
 </div>
+
+<%= content_tag :div, class: 'hidden', id: 'js-memberadmindata', data: {number_of_members: @number_of_members, number_of_not_members: @number_of_not_members} do %>
+<% end %>
 
