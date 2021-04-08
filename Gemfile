@@ -19,7 +19,7 @@ gem 'webpacker', '~> 5.2'
 # Gems needed for the app, outside rails
 gem 'browser'
 gem 'devise', '~> 4.7.1'
-gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+gem 'mimemagic'
 gem 'i18n_lazy_scope'
 gem 'image_processing', '~> 1.12'
 gem 'shrine', '~> 3.3.0'
@@ -28,7 +28,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'i18n-tasks'
   gem 'rails-controller-testing'
-  gem 'rspec-rails', '~> 5.0.0'
+  gem 'rspec-rails', '~> 5.0.1'
   gem 'shoulda-matchers'
   gem 'with_model'
 end
@@ -40,7 +40,7 @@ end
 
 group :development do
   gem 'letter_opener'
-  gem 'listen', '>= 3.0.5', '< 3.5'
+  gem 'listen', '>= 3.0.5', '< 3.6'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
