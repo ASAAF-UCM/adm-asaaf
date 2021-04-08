@@ -1,0 +1,10 @@
+
+en:
+  views:
+    error:
+      internal_server_error:
+        title: Internal server error
+        body: An internal error happened in the server :(
+      not_found:
+        title: Page not found
+        body: Requested page does not exist (404)

@@ -1,0 +1,9 @@
+es:
+  views:
+    error:
+      internal_server_error:
+        title: Error interno del servidor
+        body: Hubo un error interno en el servidor :(
+      not_found:
+        title: Página no encontrada
+        body: La página solicitada no existe (404)
