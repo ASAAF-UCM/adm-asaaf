@@ -52,8 +52,8 @@ class MemberAdminController < ApplicationController
   end
 
   def index
-    @members = Member.where.not(member_number: [nil, 0]).order(member_number: :asc)
-    @not_members = Member.where(member_number: nil).order(created_at: :asc)
+    @number_of_members = Member.where.not(member_number: [nil, 0]).count
+    @number_of_not_members = Member.where(member_number: nil).count
   end
 
   def show
@@ -97,6 +97,20 @@ class MemberAdminController < ApplicationController
   def member_search
     @matches = MemberListQuery.search(params[:member][:search])
     render json: @matches.to_json(only: [:email,
+                                         :name,
+                                         :surname1,
+                                         :surname2,
+                                         :id,
+                                         :member_number
+                                        ])
+  end
+
+  def member_page
+    page_number = params[:page] || 1
+    page_opts = params[:opts]
+    @members = MemberListQuery.page page_number, page_opts
+
+    render json: @members.to_json(only: [:email,
                                          :name,
                                          :surname1,
                                          :surname2,
