@@ -3,6 +3,10 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
     get '/:locale' => 'page#home'
+
+    match '404', to: 'error#not_found', via: :all
+    match '500', to: 'error#internal_server_error', via: :all
+
     devise_for :members, skip: [:registrations]
     as :member do
       get 'members/new' => 'devise/registrations#new', :as => 'new_member_registration'

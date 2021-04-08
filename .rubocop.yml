@@ -33,6 +33,6 @@ Naming/FileName:
     - 'app/validators/DNI_validator.rb'
     - 'spec/validators/DNI_validator_spec.rb'
 
-Rubocop/SkipModelValidations:
+Rails/SkipsModelValidations:
   Exclude:
-    - 'app'models'member.rb
+    - 'app/models/member.rb'
