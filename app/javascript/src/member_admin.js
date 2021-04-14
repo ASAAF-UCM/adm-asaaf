@@ -1,3 +1,4 @@
+import Rails from '@rails/ujs';
 import Paginator from './paginator.js';
 import 'bootstrap';
 
