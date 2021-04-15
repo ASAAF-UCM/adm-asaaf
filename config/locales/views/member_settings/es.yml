@@ -1,0 +1,6 @@
+es:
+  views:
+    member_settings:
+      index:
+        title: Configuración
+        submit: Guardar cambios

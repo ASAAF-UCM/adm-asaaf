@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
-    get '/:locale' => 'page#home'
+    get '/:locale' => 'page#home', as: 'home'
 
     match '404', to: 'error#not_found', via: :all
     match '500', to: 'error#internal_server_error', via: :all
@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     as :member do
       get 'members/new' => 'devise/registrations#new', :as => 'new_member_registration'
       post 'members' => 'devise/registrations#create', :as => 'member_registration'
+    end
+
+    scope :settings, as: :settings do
+      get '', to: 'member_settings#index'
+      put '', to: 'member_settings#update'
     end
 
     scope :profile do

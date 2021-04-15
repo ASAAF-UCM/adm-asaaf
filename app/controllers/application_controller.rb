@@ -32,6 +32,13 @@ class ApplicationController < ActionController::Base
     false
   end
 
+  # Select the desired language for the user after sign in
+  def after_sign_in_path_for(_resource)
+    I18n.with_locale current_member.member_setting.locale do
+      home_path
+    end
+  end
+
   protected
 
   def configure_permitted_parameters

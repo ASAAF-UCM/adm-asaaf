@@ -5,6 +5,7 @@
 # all the people who will use this app are (or will be) members of ASAAF.
 class Member < ApplicationRecord
   has_many :role_allocations, dependent: :destroy
+  has_one :member_setting, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
@@ -24,8 +25,10 @@ class Member < ApplicationRecord
             :last_active_member_confirmation,
             earlier_than_tomorrow: true
 
+  after_create :create_settings_for_user
+
   include ImageUploader::Attachment(:image)
-  
+
   # Updates the password of the member.
   # @param update_params [Hash] (See ProfileController#update_params)
   #
@@ -44,18 +47,16 @@ class Member < ApplicationRecord
   # Can't be used on the same user that requests the drop out, nor on a user
   # with a role.
   #
-  # @param params [hash] 
+  # @param params [hash]
   # @option params [Member] :requested_by The user who requested the drop_out
   #
   # @return [Member, false] Member if OK, false if drop_out fails
   def drop_out(params = nil)
     # We don't want to remove the actual user
-    unless params.nil?
-      return false if params[:requested_by] == self
-    end
-    
+    return false if !params.nil? && (params[:requested_by] == self)
+
     # We don't want to remove a member with a role
-    return false unless self.roles.length.zero?
+    return false unless roles.length.zero?
 
     lock_access!({ send_instructions: false })
     save
@@ -93,7 +94,7 @@ class Member < ApplicationRecord
   def roles
     RoleAllocation
       .joins(:member, :role_type)
-      .where(member_id: self.id, is_active: true)
+      .where(member_id: id, is_active: true)
       .pluck(:role_name)
   end
 
@@ -102,8 +103,8 @@ class Member < ApplicationRecord
   #
   # @return [Member, false] Member if all OK, false if fails
   def convert_into_member
-    return false unless self.member_number.nil?
-    return false unless self.member_type_id.nil?
+    return false unless member_number.nil?
+    return false unless member_type_id.nil?
 
     self.member_type_id = 3
     self.member_number = Member.maximum(:member_number) + 1
@@ -111,5 +112,20 @@ class Member < ApplicationRecord
     self.last_active_member_confirmation = Date.today
 
     save
+  end
+
+  # Make devise sending emails in the language that the user has chosen
+  def send_devise_notification(notification, *args)
+    I18n.with_locale(member_setting.locale || I18n.default_locale) do
+      super(notification, *args)
+    end
+  end
+
+  private
+
+  # Creates the settings for the created user
+  # @return Member
+  def create_settings_for_user
+    MemberSetting.create(member_id: id, locale: I18n.locale.to_s)
   end
 end

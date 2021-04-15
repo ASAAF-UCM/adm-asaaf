@@ -1,7 +1,7 @@
 <nav class="navbar main-navbar <%= @home_page ? 'homepage' : ''%>">
   <ul class="nav-left btn-group">
     <li>
-      <%= link_to image_pack_tag("logo_asaaf.png", alt: "Logo de ASAAF", class: "logo"), root_path %>
+      <%= link_to image_pack_tag("logo_asaaf.png", alt: "Logo de ASAAF", class: "logo"), home_path %>
     </li>
     <li class="nav-left btn-group">
       <% if member_signed_in? %>
@@ -29,6 +29,7 @@
         </button>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
           <%= link_to t_scoped(:profile), profile_path, class: 'dropdown-item' %>
+          <%= link_to t_scoped(:settings), settings_path, class: 'dropdown-item' %>
           <%= link_to t_scoped(:sign_out), destroy_member_session_path, method: 'delete', class: 'dropdown-item' %>
         </div>
       </div>

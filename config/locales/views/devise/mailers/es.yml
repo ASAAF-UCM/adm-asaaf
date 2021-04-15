@@ -1,0 +1,28 @@
+es:
+  views:
+    devise:
+      mailer:
+        confirmation_instructions:
+          subject: Instrucciones para confirmar tu email
+          greeting: ¡Te damos la bienvenida a ASAAF-UCM, %{name}!
+          body: Confirmar tu email es el primer paso antes de ser un miembro oficial de ASAAF-UCM. Después de pagar la cuota de membresía, te convertirás en socio de ASAAF.
+          instructions: "Puedes confirmar tu cuenta de email haciendo click en el siguiente enlace:"
+        email_changed:
+          subject: Cambio de email
+          greeting: ¡Hola %{name}!
+          body: Nos ponemos en contacto contigo para notificarte que tu email acaba de ser cambiado a ${email}
+        password_change:
+          subject: Cambio de contraseña
+          greeting: ¡Hola %{name}!
+          body: Nos ponemos en contacto contigo para notificarte que tu contraseña ha sido cambiada.
+        reset_password_instructions:
+          subject: Instrucciones para cambiar la contraseña
+          greeting: ¡Hola %{name}!
+          body1: "Alguien ha pedido un enlace para cambiar tu contraseña. Puedes hacerlo a través del siguiente enlace:"
+          change_password_link: Cambiar mi contraseña
+          body2: Si no has pedido este cambio de contraseña, por favor, ignora este email. Tu contraseña no será cambiada a menos que accedas al enlace superior y crees una nueva.
+        unlock_instructions:
+          subject: Instrucciones de desbloqueo
+          greeting: Hola %{name}
+          body: "Tu cuenta acaba de ser bloqueada debido a un número excesivo de intentos de inicio de sesión. Haz click en el siguiente enlace para despbloquear tu cuenta:"
+          unlock_link: Desbloquear mi cuenta

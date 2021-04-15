@@ -1,0 +1,6 @@
+en:
+  controllers:
+    member_settings:
+      update:
+        success: Your settings were saved succesfully.
+        error: There was an error when saving your configuration and it wasn't saved.
