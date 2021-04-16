@@ -9,6 +9,7 @@ en:
         by: by
       nav:
         profile: Profile
+        settings: Settings
         roles: Roles
         admin_dashboard: Admin dashboard
         sign_in: Sign in

@@ -1,5 +1,6 @@
-<p>Welcome <%= @email %>!</p>
+<p><%= t_scoped :greeting, name: @resource.name %></p>
 
-<p>You can confirm your account email through the link below:</p>
+<p><%= t_scoped :body %></p>
+<p><%= t_scoped :instructions %></p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to t_scoped(:subject), confirmation_url(@resource, confirmation_token: @token) %></p>

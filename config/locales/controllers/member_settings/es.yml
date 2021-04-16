@@ -1,0 +1,6 @@
+es:
+  controllers:
+    member_settings:
+      update:
+        success: Tu configuración ha sido guardada con éxito.
+        error: Hubo un error al guardar tu configuración y no fue guardada.

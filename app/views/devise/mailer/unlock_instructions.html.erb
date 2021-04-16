@@ -1,7 +1,4 @@
-<p>Hello <%= @resource.email %>!</p>
+<p><%= t_scoped :greeting, name: @resource.name %></p>
+<p><%= t_scoped :body %></p>
 
-<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
-
-<p>Click the link below to unlock your account:</p>
-
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+<p><%= link_to t_scoped(:unlock_link), unlock_url(@resource, unlock_token: @token) %></p>

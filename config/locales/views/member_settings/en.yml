@@ -1,0 +1,6 @@
+en:
+  views:
+    member_settings:
+      index:
+        title: Settings
+        submit: Save changes

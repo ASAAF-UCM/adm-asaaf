@@ -9,6 +9,7 @@ es:
         by: por
       nav:
         profile: Perfil
+        settings: Configuración
         roles: Roles
         admin_dashboard: Panel de administración
         sign_in: Iniciar sesión

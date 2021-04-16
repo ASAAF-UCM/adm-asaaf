@@ -1,0 +1,23 @@
+<h1><%= t_scoped :title %></h1>
+<%= form_with(model: MemberSetting,
+              url: settings_path,
+              method: :put
+             ) do |f| %>
+  <div class="form-row mb-3">
+    <%= f.label :language, class: 'mb-3' %>
+    <div class="input-group flex-nowrap">
+      <%=
+        collection_select(
+          :membersetting,
+          :locale,
+          I18n.available_locales,
+          :to_s,
+          ->(locale) { language_of("#{locale}").capitalize },
+          {selected: @settings.locale},
+          {class: 'form-select mb-3'}
+        ) %>
+    </div>
+    <%= f.submit (t_scoped :submit), class: "btn btn-primary" %>
+  </div>
+
+<% end %>

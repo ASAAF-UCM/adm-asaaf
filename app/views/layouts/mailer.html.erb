@@ -3,11 +3,33 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
-      /* Email styles need to be inline */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+table {
+  margin: 0 auto;
+  max-width: 420px;
+  line-height: 1.6;
+}
     </style>
   </head>
 
   <body>
-    <%= yield %>
+    <table>
+      <tbody>
+        <tr>
+          <td style="text-align:center">
+            <%= link_to image_tag(attachments['logo.png'].url, alt: "ASAAF", width: 100), 'home' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= yield %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>

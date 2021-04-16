@@ -1,0 +1,29 @@
+en:
+  views:
+    devise:
+      mailer:
+        confirmation_instructions:
+          subject: Email confirmation instructions
+          greeting: Welcome to ASAAF-UCM, %{name}!
+          body: Confirming your email is your first step before being an official member of ASAAF-UCM. After paying the entry fee, you'll became a member of ASAAF.
+          instructions: "You can confirm your account email through the link below:"
+          confirm_link: Confirm my account
+        email_changed:
+          subject: Email changed
+          greeting: Hi %{name}!
+          body: We're contacting you to notify you that your email has been changed to %{email}
+        password_change:
+          subject: Password change
+          greeting: Hi %{name}!
+          body: We're contacting you to notify you that your password has been changed.
+        reset_password_instructions:
+          subject: Password change instructions
+          greeting: Hi %{name}!
+          body1: "Someone has requested a link to change your password. You can do this through the link below:"
+          change_password_link: Change my password
+          body2: If you didn't request this, please ignore this email. Your password won't change until you access the link above and create a new one.
+        unlock_instructions:
+          subject: Reset instructions
+          greeting: Hi %{name}!
+          body: "Your account has been locked due to an excesive number of sign in attempts. Click on the next link to unlock your account"
+          unlock_link: Unlock my account

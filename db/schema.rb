@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_110749) do
+ActiveRecord::Schema.define(version: 2021_04_10_100523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -20,11 +20,18 @@ ActiveRecord::Schema.define(version: 2020_05_06_110749) do
     t.string "name", null: false
   end
 
+  create_table "member_settings", force: :cascade do |t|
+    t.uuid "member_id"
+    t.string "locale"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "member_types", force: :cascade do |t|
     t.string "name", null: false
   end
 
-  create_table "members", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "members", id: :uuid, default: -> { "public.gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.string "surname1", null: false
     t.string "surname2"
@@ -79,6 +86,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_110749) do
     t.string "role_name"
   end
 
+  add_foreign_key "member_settings", "members"
   add_foreign_key "members", "id_document_types"
   add_foreign_key "members", "member_types"
   add_foreign_key "role_allocations", "members"
