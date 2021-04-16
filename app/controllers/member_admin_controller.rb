@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 # Controller for the member administration dashboard.
 class MemberAdminController < ApplicationController
   before_action :authenticate_member!
@@ -76,14 +75,14 @@ class MemberAdminController < ApplicationController
   def unlock_account
     @member = Member.find(params[:id])
     @member.unlock_access!
-    flash.alert = t_scoped :account_was_unlocked
+    flash[:success] = t_scoped :account_was_unlocked
     redirect_to member_admin_path(id: @member.id)
   end
 
   def lock_account
     @member = Member.find(params[:id])
     @member.lock_access!
-    flash.alert = t_scoped :account_was_locked
+    flash[:success] = t_scoped :account_was_locked
     redirect_to member_admin_path(id: @member.id)
   end
 
@@ -96,13 +95,12 @@ class MemberAdminController < ApplicationController
 
   def member_search
     @matches = MemberListQuery.search(params[:member][:search])
-    render json: @matches.to_json(only: [:email,
-                                         :name,
-                                         :surname1,
-                                         :surname2,
-                                         :id,
-                                         :member_number
-                                        ])
+    render json: @matches.to_json(only: %i[email
+                                           name
+                                           surname1
+                                           surname2
+                                           id
+                                           member_number])
   end
 
   def member_page
@@ -110,13 +108,12 @@ class MemberAdminController < ApplicationController
     page_opts = params[:opts]
     @members = MemberListQuery.page page_number, page_opts
 
-    render json: @members.to_json(only: [:email,
-                                         :name,
-                                         :surname1,
-                                         :surname2,
-                                         :id,
-                                         :member_number
-                                        ])
+    render json: @members.to_json(only: %i[email
+                                           name
+                                           surname1
+                                           surname2
+                                           id
+                                           member_number])
   end
 
   def convert_into_member
@@ -127,7 +124,7 @@ class MemberAdminController < ApplicationController
     else
       flash[:alert] = t_scoped :errors
     end
-  redirect_to member_admin_path(id: @member.id)
+    redirect_to member_admin_path(id: @member.id)
   end
 
   private
@@ -161,7 +158,6 @@ class MemberAdminController < ApplicationController
               :password,
               :password_confirmation,
               :id_document_type_id,
-              :image
-             )
+              :image)
   end
 end
