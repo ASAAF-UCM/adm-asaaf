@@ -87,12 +87,6 @@
     <%= f.text_field :moodle_name, class: 'form-control', placeholder: true %>
   </div>
 
-  <div class='form-group custom-file mb-3'>
-    <%= f.label :image_data, class: 'form-label'  %>
-    <%= f.hidden_field :image, value: @member.cached_image_data %>
-    <%= f.file_field :image, class: 'form-control' %>
-  </div>
-
     <%= f.submit t('devise.registrations.submit'), class: 'btn btn-primary mb-3' %>
 <% end %>
 

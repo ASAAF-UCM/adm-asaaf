@@ -27,8 +27,6 @@ class Member < ApplicationRecord
 
   after_create :create_settings_for_user
 
-  include ImageUploader::Attachment(:image)
-
   # Updates the password of the member.
   # @param update_params [Hash] (See ProfileController#update_params)
   #

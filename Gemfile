@@ -19,10 +19,9 @@ gem 'webpacker', '~> 5.2'
 # Gems needed for the app, outside rails
 gem 'browser'
 gem 'devise', '~> 4.7.1'
-gem 'mimemagic'
 gem 'i18n_lazy_scope'
 gem 'image_processing', '~> 1.12'
-gem 'shrine', '~> 3.3.0'
+gem 'mimemagic'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
