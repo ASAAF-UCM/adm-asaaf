@@ -1,0 +1,34 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: i18n-tasks
+    versions:
+    - 0.9.34
+  - dependency-name: nokogiri
+    versions:
+    - 1.11.1
+  - dependency-name: websocket-extensions
+    versions:
+    - 0.1.5
+  - dependency-name: rack
+    versions:
+    - 2.2.3
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - 7.20.0
+  - dependency-name: "@rails/activestorage"
+    versions:
+    - 6.1.1
