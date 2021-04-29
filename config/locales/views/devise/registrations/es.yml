@@ -1,34 +1,4 @@
 es:
-  helpers:
-    label:
-      member:
-        birthdate: Fecha de nacimiento
-        id_document_expiration_date: Fecha de caducidad del documento de identidad
-        id_document_number: Número del documento de identidad
-        id_document_type_id: Tipo de documento de identidad
-        image_data: Imagen del documento de identidad
-        moodle_name: Nombre en moodle (si estudias en la facultad de Físicas de la
-          UCM)
-        name: Nombre
-        password: Contraseña
-        password_confirmation: Confirmar contraseña
-        submit: Enviar
-        surname1: Primer apellido
-        surname2: Segundo apellido
-    placeholder:
-      member:
-        birthdate: Fecha de nacimiento
-        id_document_expiration_date: Fecha de caducidad del documento de identidad
-        id_document_number: Número del documento de identidad
-        id_document_type_id: Tipo de documento de identidad
-        moodle_name: Nombre en moodle (si estudias en la facultad de Físicas de la
-          UCM)
-        name: Nombre
-        password: Contraseña
-        password_confirmation: Confirmar contraseña
-        current_password: Contraseña actual
-        surname1: Primer apellido
-        surname2: Segundo apellido
   views:
     devise:
       registrations:
