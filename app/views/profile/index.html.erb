@@ -36,7 +36,9 @@
     <%= '(' + t_scoped(:expiry)  + ': ' + @member.id_document_expiration_date.to_s  + ')' %>
   </span>
   <div>
-    <%# image_tag @member.image_url || "" %>
+    <% if @member.id_image.attached? %>
+      <%= image_tag @member.id_image, class: 'id_image'%>
+    <% end %>
   </div>
 </div>
 <div class="profile_field">

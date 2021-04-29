@@ -2,6 +2,7 @@ es:
   views:
     member_admin:
       edit:
+        return: Volver
         title_member: Edición de datos del socio
         title_no_member: Edición de datos del no-socio
         submit: Actualizar datos

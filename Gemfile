@@ -17,6 +17,7 @@ gem 'tzinfo-data'
 gem 'webpacker', '~> 5.2'
 
 # Gems needed for the app, outside rails
+gem 'active_storage_validations'
 gem 'browser'
 gem 'devise', '~> 4.7.1'
 gem 'i18n_lazy_scope'

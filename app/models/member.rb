@@ -7,6 +7,8 @@ class Member < ApplicationRecord
   has_many :role_allocations, dependent: :destroy
   has_one :member_setting, dependent: :destroy
 
+  has_one_attached :id_image
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable,
@@ -24,6 +26,10 @@ class Member < ApplicationRecord
   validates :member_since,
             :last_active_member_confirmation,
             earlier_than_tomorrow: true
+  validates :id_image,
+            attached: true,
+            content_type: %i[png jpg jpeg],
+            size: { less_than: 250.kilobytes }
 
   after_create :create_settings_for_user
 

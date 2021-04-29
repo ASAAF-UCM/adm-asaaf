@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
     devise_for :members, skip: [:registrations]
     as :member do
-      get 'members/new' => 'devise/registrations#new', :as => 'new_member_registration'
-      post 'members' => 'devise/registrations#create', :as => 'member_registration'
+      get 'members/new' => 'member/registrations#new', :as => 'new_member_registration'
+      post 'members' => 'member/registrations#create', :as => 'member_registration'
     end
 
     scope :settings, as: :settings do

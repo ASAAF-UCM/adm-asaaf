@@ -26,6 +26,7 @@ class MemberAdminController < ApplicationController
 
   def update
     @member = Member.find(params[:id])
+
     if @member.update(update_params)
       flash[:success] = t_scoped :success
       redirect_to member_admin_path(id: @member.id)
@@ -140,6 +141,7 @@ class MemberAdminController < ApplicationController
               :id_document_number,
               :id_document_type_id,
               :id_document_expiration_date,
+              :id_image,
               :moodle_name)
   end
 
@@ -158,6 +160,6 @@ class MemberAdminController < ApplicationController
               :password,
               :password_confirmation,
               :id_document_type_id,
-              :image)
+              :id_image)
   end
 end

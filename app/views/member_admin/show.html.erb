@@ -52,6 +52,11 @@
   <p class="field_value">
   <%= IdDocumentType.find(@member.id_document_type_id).name %>
     <%= @member.id_document_number %>
+    <div>
+    <% if @member.id_image.attached? %>
+      <%= image_tag @member.id_image, class: 'id_image'%>
+    <% end %>
+    </div>
   </p>
 </div>
 <div class="profile_field">

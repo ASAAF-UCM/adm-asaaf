@@ -8,7 +8,10 @@ FactoryBot.define do
     birthdate           { Faker::Date.birthday(min_age: 14, max_age: 115) }
     id_document_type_id { 1 }
     id_document_expiration_date { Faker::Date.forward(days: 10 * 365) }
-    id_document_number { Faker::IDNumber.spanish_citizen_number }
+    id_document_number  { Faker::IDNumber.spanish_citizen_number }
+    id_image            do
+      Rack::Test::UploadedFile.new 'spec/fixtures/DNI_test_image.jpg', 'image/jpg'
+    end
 
     moodle_name { name + surname1 + surname2 }
 

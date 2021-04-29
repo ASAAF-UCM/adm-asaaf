@@ -2,6 +2,7 @@ en:
   views:
     member_admin:
       edit:
+        return: Return
         title_member: Edit data from member
         title_no_member: Edit data from non-member
         submit: Update data

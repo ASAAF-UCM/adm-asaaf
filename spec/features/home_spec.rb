@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'User registration', type: :feature do
@@ -5,11 +7,13 @@ RSpec.describe 'User registration', type: :feature do
     visit root_path
   end
 
-
   it 'User enters home page in Spanish and register' do
     visit '/es'
 
     click_on 'Registrarse'
+
+    attach_file 'Imagen del documento de identidad',
+                'spec/fixtures/DNI_test_image.jpg'
 
     fill_in 'Nombre', with: 'Benito'
     fill_in 'Primer apellido', with: 'Hurtado'
@@ -31,6 +35,8 @@ RSpec.describe 'User registration', type: :feature do
     visit '/en'
 
     click_on 'Sign up'
+
+    attach_file 'Image of the ID document', 'spec/fixtures/DNI_test_image.jpg'
 
     fill_in 'Name', with: 'Benito'
     fill_in 'First surname', with: 'Hurtado'

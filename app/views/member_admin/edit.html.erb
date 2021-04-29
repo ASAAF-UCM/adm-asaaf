@@ -1,3 +1,12 @@
+<div>
+  <%=
+    link_to "<button type=\"button\" class=\"btn btn-outline-primary btn-sm\">
+      #{t_scoped :return}
+    </button>".html_safe,
+    member_admin_path(@member.id)
+  %>
+</div>
+
 <h1><%= member_admin_edit_title @member %></h1>
 
 <%= form_with model: @member, url: member_admin_path(@member.id), method: :put do |form| %>
@@ -33,6 +42,10 @@
       <%= form.text_field :id_document_number, class: 'form-control' %>
       <%= form.date_field :id_document_expiration_date, class: 'form-control' %>
     </div>
+  </div>
+  <div class="form-row input-group custom-file mb-3">
+    <%= form.label :id_image, class: 'input-group-text'  %>
+    <%= form.file_field :id_image, class: 'form-control' %>
   </div>
   <div class="form-row mb-3">
     <%= form.label :moodle_name %>

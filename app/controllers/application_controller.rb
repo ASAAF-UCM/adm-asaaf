@@ -50,6 +50,7 @@ class ApplicationController < ActionController::Base
                                         id_document_type_id
                                         id_document_expiration_date
                                         id_document_number
+                                        id_image
                                         moodle_name
                                       ])
   end
