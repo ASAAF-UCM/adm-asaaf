@@ -18,7 +18,7 @@ gem 'webpacker', '~> 5.2'
 
 # Gems needed for the app, outside rails
 gem 'browser'
-gem 'devise', '~> 4.7.1'
+gem 'devise', '~> 4.8.0'
 gem 'mimemagic'
 gem 'i18n_lazy_scope'
 gem 'image_processing', '~> 1.12'
