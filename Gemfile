@@ -14,7 +14,7 @@ gem 'puma', '~> 5.2'
 gem 'rails', '~> 6.1.3'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data'
-gem 'webpacker', '~> 5.2'
+gem 'webpacker', '~> 5.3'
 
 # Gems needed for the app, outside rails
 gem 'browser'
