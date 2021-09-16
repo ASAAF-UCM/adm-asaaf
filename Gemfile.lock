@@ -89,7 +89,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.4.4)
-    down (5.2.0)
+    down (5.2.2)
       addressable (~> 2.5)
     erubi (1.10.0)
     factory_bot (6.2.0)
@@ -232,7 +232,7 @@ GEM
     semantic_range (2.3.1)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
-    shrine (3.3.0)
+    shrine (3.4.0)
       content_disposition (~> 1.0)
       down (~> 5.1)
     spring (2.1.1)
@@ -308,7 +308,7 @@ DEPENDENCIES
   rspec-rails (~> 5.0.1)
   selenium-webdriver
   shoulda-matchers
-  shrine (~> 3.3.0)
+  shrine (~> 3.4.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
