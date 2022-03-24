@@ -10,7 +10,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jbuilder', '~> 2.11'
 gem 'jquery-rails'
 gem 'pg'
-gem 'puma', '~> 5.5'
+gem 'puma', '~> 5.6'
 gem 'rails', '~> 6.1.4'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data'
